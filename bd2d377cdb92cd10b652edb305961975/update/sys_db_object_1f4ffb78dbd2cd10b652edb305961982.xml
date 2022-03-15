@@ -34,7 +34,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-03-15 18:35:29</sys_updated_on>
         <update_access>false</update_access>
-        <user_role display_value="x_snc_parcel.event_user" name="x_snc_parcel.event_user">5b5fbf78dbd2cd10b652edb305961926</user_role>
+        <user_role/>
         <ws_access>true</ws_access>
     </sys_db_object>
 </record_update>
