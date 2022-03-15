@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Parcel" max_length="40" name="x_snc_parcel_parcel" type="collection">
+        <element default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="10" name="number" type="string" use_dynamic_default="true"/>
+    </element>
+</database>
