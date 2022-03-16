@@ -24,7 +24,7 @@
 	strParcel = MakeValidParcelNumber(strParcel);
 	
 	var grRecord = new GlideRecord('x_snc_parcel_parcel');
-	var condition = grRecord.addQuery('number','ENDSWITH','0'+strParcel);
+	var condition = grRecord.addQuery('number','ENDSWITH','-'+strParcel);
 	condition.addOrCondition('number','=',strParcel);
 	grRecord.query();
 	if (grRecord.next())
@@ -37,13 +37,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 13:20:18</sys_created_on>
         <sys_id>9730c8d5db5a0150b652edb3059619a2</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>GetParcelRecord</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_9730c8d5db5a0150b652edb3059619a2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-16 16:01:30</sys_updated_on>
+        <sys_updated_on>2022-03-16 18:51:59</sys_updated_on>
     </sys_script_include>
 </record_update>
