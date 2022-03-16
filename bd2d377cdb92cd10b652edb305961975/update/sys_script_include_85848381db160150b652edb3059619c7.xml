@@ -10,12 +10,89 @@
         <script><![CDATA[function HtmlRenderPageParcelScan()
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var IsValidSysId = x_snc_devtools.IsValidSysId;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetRecord = x_snc_devtools.GetRecord;
+	
+	
+	function HtmlRenderPageParcelScanStateEnterNumber()
+	{
+		strHtml = '';
+		strHtml += '<p>HtmlRenderPageParcelScanStateEnterNumber</p>';
+		return strHtml;
+		
+	}
 
+	function HtmlRenderPageParcelScanStateSelectOption(grParcel)
+	{
+		strHtml = '';
+		strHtml += '<p>HtmlRenderPageParcelScanStateSelectOption</p>';
+		
+		strHtml += x_snc_devtools.RenderRecordSummary(grParcel);
+		
+		return strHtml;
+		
+	}
+
+	function HtmlRenderPageParcelScanStateCreateEvent(grParcel,grOption)
+	{
+		strHtml = '';
+		strHtml += '<p>HtmlRenderPageParcelScanStateCreateEvent</p>';
+		return strHtml;
+	}
+
+	
+	
+	
 	var strHtml = '';
 	
 	strHtml += '<h1>Parcel Scan</h1>';
 	
-	strHtml += '<div>'+GetStringValue(RP.getParameterValue('parcel'))+'</div>';
+	var strState = '';
+	var strParcel = GetStringValue(RP.getParameterValue('parcel'));
+	var strOption = GetStringValue(RP.getParameterValue('option'));
+
+	strHtml += '<p>Parcel: '+strParcel+'</p>';
+	
+	if (strParcel == '')
+	{
+		strState = 'enternumber';
+	}
+	else 
+	{
+		var grParcel = GetParcelRecord(strParcel);
+		if (IsValidRecord(grParcel) == false)
+		{
+			strState = 'enternumber';
+		}
+		else
+		{
+			var grOption = GetRecord('x_snc_parcel_event_option',strOption);
+			if (IsValidRecord(grOption) == false)
+			{
+				strState = 'selectoption';
+			}
+			else
+			{
+				strState = 'createevent';
+			}
+		}
+	}
+	
+	strHtml += 'State: '+strState;
+		
+	switch (strState)
+	{
+	case 'selectoption':
+		strHtml += HtmlRenderPageParcelScanStateSelectOption(grParcel);
+		break;
+	case 'createevent':
+		strHtml += HtmlRenderPageParcelScanStateCreateEvent(grParcel,grOption);
+		break;
+	case 'enternumber':
+	default:
+		strHtml += HtmlRenderPageParcelScanStateEnterNumber();
+	}
 	
 	return strHtml;
 }]]></script>
@@ -23,13 +100,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 08:58:22</sys_created_on>
         <sys_id>85848381db160150b652edb3059619c7</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>HtmlRenderPageParcelScan</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_85848381db160150b652edb3059619c7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-16 09:02:41</sys_updated_on>
+        <sys_updated_on>2022-03-16 15:52:51</sys_updated_on>
     </sys_script_include>
 </record_update>

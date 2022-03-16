@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Event Option" max_length="40" name="x_snc_parcel_event_option" type="collection">
+    <element label="Event Option" max_length="40" name="x_snc_parcel_event_option" sizeclass="5" type="collection">
         <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
         <element display="true" label="Name" max_length="200" name="name" type="string"/>
         <element label="Order" max_length="40" name="order" type="integer"/>
