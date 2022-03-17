@@ -77,13 +77,13 @@
 	
 	//strHtml += '<div style="font-size: 500%;">MEDICAL SUPPLIES</div>';
 	
-	strHtml += '<div id="qrcode" style="width:100%; margin-top:15px;" url="'+strUrl+'" height="600" width="600"></div>';
+	strHtml += '<div id="qrcode" style="width:100%; margin-top:15px;" url="'+strUrl+'" height="550" width="550"></div>';
 	
 	
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
 	if (IsValidRecord(grLocation))
 	{
-		strHtml += '<div width="200px" style="font-size: 500%;"><b>SHIP TO</b></div>'
+		strHtml += '<div width="200px" style="font-size: 400%;"><b>SHIP TO</b></div>'
 		strHtml += '<div style="font-size: 200%;">';
 		
 		strHtml += '<div>'+grLocation.name+'</div>';
@@ -113,13 +113,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 19:35:17</sys_created_on>
         <sys_id>22c599d9db124150b652edb30596193b</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>HtmlRenderPageParcelLabel</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_22c599d9db124150b652edb30596193b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-17 16:45:22</sys_updated_on>
+        <sys_updated_on>2022-03-17 16:49:48</sys_updated_on>
     </sys_script_include>
 </record_update>
