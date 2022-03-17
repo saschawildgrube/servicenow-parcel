@@ -88,8 +88,8 @@
 		
 		strHtml += '<div>'+grLocation.name+'</div>';
 		strHtml += '<div>'+grLocation.street+'</div>';
-		strHtml += '<div>'+grLocation.zip+' '+grLocation.city+' '+grLocation.state+'</div>';
-		strHtml += '<div>'+grLocation.country+'</div>';
+		strHtml += '<div>'+grLocation.zip+' '+grLocation.city+' '+grLocation.state+' '+grLocation.country+'</div>';
+		//strHtml += '<div>'+grLocation.country+'</div>';
 
 		
 		strHtml += '</div>';
@@ -113,13 +113,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 19:35:17</sys_created_on>
         <sys_id>22c599d9db124150b652edb30596193b</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>HtmlRenderPageParcelLabel</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_22c599d9db124150b652edb30596193b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-17 16:19:56</sys_updated_on>
+        <sys_updated_on>2022-03-17 16:45:22</sys_updated_on>
     </sys_script_include>
 </record_update>
