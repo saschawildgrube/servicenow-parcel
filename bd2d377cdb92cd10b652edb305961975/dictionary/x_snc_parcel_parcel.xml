@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Parcel" max_length="40" name="x_snc_parcel_parcel" sizeclass="5" type="collection">
+    <element label="Parcel" max_length="40" name="x_snc_parcel_parcel" sizeclass="8" type="collection">
         <element label="Destination" max_length="32" name="destination" reference="cmn_location" type="reference"/>
         <element default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="20" name="number" type="string" use_dynamic_default="true"/>
+        <element label="Sender" max_length="32" name="sender" reference="cmn_location" type="reference"/>
         <element label="Related Task" max_length="32" name="task" reference="task" type="reference"/>
         <index name="index">
             <element name="task"/>
         </index>
         <index name="index2">
+            <element name="sender"/>
+        </index>
+        <index name="index3">
             <element name="destination"/>
         </index>
     </element>
