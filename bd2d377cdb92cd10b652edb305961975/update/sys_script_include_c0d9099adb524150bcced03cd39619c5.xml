@@ -95,7 +95,7 @@ for (i = pages; i > 0; i--) {
 		strTo += grLocation.street+'\n';
 		strTo += grLocation.zip+' '+grLocation.city+'\n'
 		strTo += grLocation.state+' '+grLocation.country;
-		addPara(25, 0, strTo);
+		addPara(20, 0, strTo);
 		
 	}
 
@@ -127,13 +127,13 @@ for (i = pages; i > 0; i--) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-19 21:14:39</sys_created_on>
         <sys_id>c0d9099adb524150bcced03cd39619c5</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>CreateParcelLabel</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_c0d9099adb524150bcced03cd39619c5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-19 21:57:25</sys_updated_on>
+        <sys_updated_on>2022-03-19 22:07:50</sys_updated_on>
     </sys_script_include>
 </record_update>
