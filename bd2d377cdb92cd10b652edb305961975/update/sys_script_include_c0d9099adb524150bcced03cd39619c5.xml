@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_parcel.CreateParcelLabel</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Creates a label for a parcel and stores it as an attachment.</description>
+        <name>CreateParcelLabel</name>
+        <script><![CDATA[function CreateParcelLabel(strParcelSysId)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetRecord = x_snc_devtools.GetRecord;
+	
+	
+	var grParcel = GetParcelRecord(strParcelSysId);
+	if (IsValidRecord(grParcel) == false)
+	{
+		return false;
+	}
+	
+	
+	var pageSize = new sn_pdfgeneratorutils.PdfPage('A4');
+	var document = new sn_pdfgeneratorutils.Document.createDocument(pageSize);
+	var pages = 1;
+
+	function addPara(size, padding, text, bold)
+	{
+		var style1 = new sn_pdfgeneratorutils.Style();
+		style1.setFontSize(size);
+		var padding1 = padding;
+		style1.setPadding(padding1);
+		if (bold) style1.setBold();
+
+		var myPara1 = new sn_pdfgeneratorutils.Paragraph(text);
+		myPara1.addStyle(style1);
+		document.addParagraph(myPara1);
+	}
+
+
+
+	function qrcode()
+	{
+		var arr = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL()+'?parcel='+grParcel.sys_id);
+
+		var num = 1;
+		var xpos = 40;
+		var ypos = 40;
+
+		var width = 6;
+		var linewidth = width;
+	//https://developer.servicenow.com/dev.do#!/reference/api/quebec/server/sn_pdfgeneratorutils-namespace/LineBothAPI#Line-Line
+		var line = new sn_pdfgeneratorutils.Line();
+		for (x=0; x<arr.length; x++)
+		{
+			for (y=0; y<arr.length; y++)
+			{
+				gs.info(x + '/' + y);
+				if (arr[x][y] == 1)
+				{
+					line.drawLine(document, num, (x * width) + xpos, (y * width) + ypos, width, linewidth);
+				}
+			}
+		}
+	}
+
+	/*
+var i;
+for (i = pages; i > 0; i--) {
+  */
+  
+	// PARCEL NUMBER
+    addPara(70, 0, grParcel.number, true);
+
+	// TASK/CASE
+	var grTask = GetRecord('task',grParcel.task);
+	if (IsValidRecord(grTask))
+	{
+		addPara(10, 0, 'TASK/CASE '+grTask.number);
+	}	
+	
+    // QR CODE
+   // var image = new sn_pdfgeneratorutils.Image("a788ae061b1e45908edccbb5464bcb0a");
+    //image.setAutoScale(true);
+    //document.addImage(image);
+    qrcode();
+
+	// SHIP TO
+	var grLocation = GetRecord('cmn_location',grParcel.destination);
+	if (IsValidRecord(grLocation))
+	{
+		addPara(25, 0, "SHIP TO", true);
+
+		var strTo = grLocation.name+'\n';
+		strTo += grLocation.street+'\n';
+		strTo += grLocation.zip+' '+grLocation.city+'\n'
+		strTo += grLocation.state+' '+grLocation.country;
+		addPara(25, 0, strTo);
+		
+	}
+
+	// SHIP FROM
+	var grLocationSender = GetRecord('cmn_location',grParcel.sender);
+	if (IsValidRecord(grLocationSender))
+	{
+		addPara(10, 0, "SHIP FROM", true);
+		addPara(10, 0, "Blaues Gelbes Kreuz e.V. Köln Germany");
+		
+		var strFrom =  grLocationSender.name+' ';
+		strFrom += grLocationSender.street+' ';
+		strFrom += grLocationSender.zip+' '+grLocationSender.city+' '+grLocationSender.state+' ';
+		strFrom += grLocationSender.country;		
+	}	
+		
+
+	
+
+/*	
+    if (i>1) document.addNewPage();
+}
+*/
+
+	document.saveAsAttachment('x_snc_parcel_parcel', grParcel.sys_id, grParcel.number+'_label.pdf');	
+	
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-19 21:14:39</sys_created_on>
+        <sys_id>c0d9099adb524150bcced03cd39619c5</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>CreateParcelLabel</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_script_include_c0d9099adb524150bcced03cd39619c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-19 21:57:25</sys_updated_on>
+    </sys_script_include>
+</record_update>
