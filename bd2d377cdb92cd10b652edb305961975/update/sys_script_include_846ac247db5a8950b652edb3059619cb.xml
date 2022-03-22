@@ -87,20 +87,20 @@
 		
 		
 		//var xpos = 4.0; // cm from left
-		var xpos = 2; // cm from left
+		var xpos = 0; // cm from left
 
 		//var ypos = 4.0; // cm from top
 		var ypos = 4;
 		var color = "background-color: #000;";
 		//var nWidth = (21.0 - 2*xpos); // qr: 80% of page width without margin	
-		var nWidth = 10.0; 
+		var nWidth = 12.0; 
 
 
 		var width = nWidth / aBitmap.length;
 
 		
 		var strHtml = '';
-		//strHtml += '<div>';
+		strHtml += '<div style="position: absolute; width: 13cm;">';
 		
 		for (var nRow = 0; nRow < aBitmap.length; nRow++)
 		{
@@ -118,14 +118,10 @@
 				}
 			}
 		}
-		//strHtml += '</div>';
+		strHtml += '</div>';
 		return strHtml;
 	}
 	
-	// QR CODE
-	var aQRCode = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL(grParcel.sys_id));
-	strHtml += HtmlRenderBitmap(aQRCode);
-
 	// PARCEL NUMBER
 	strHtml += '<div style="font-size: '+StringLengthToFontSize(GetStringValue(grParcel.number).length)+';">' + grParcel.number + '</div>';
 
@@ -137,8 +133,12 @@
 		strHtml += strText+' ';
 		strHtml += '</div>';
 	}	
-	
-	
+
+	// QR CODE
+	var aQRCode = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL(grParcel.sys_id));
+	strHtml += HtmlRenderBitmap(aQRCode);
+
+	strHtml += '<div style="height: 13cm;"/>';
 	
 	// SHIP TO
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
@@ -181,7 +181,7 @@
 		var strHtml = '';
 		
 		strHtml += '<div style="width: 21cm; height: 29.7cm; border: 0px; padding: 1cm 1cm 1cm 1cm;">';
-			strHtml += '<div style="width: 19cm; height: 27.7cm;">';
+			strHtml += '<div style="width: 18.9cm; height: 27.6cm;">';
 				strHtml += strContent;
 			strHtml += '</div>';
 		strHtml += '</div>';
@@ -196,13 +196,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-22 09:53:20</sys_created_on>
         <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>HtmlRenderParcelLabelA4</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-22 11:46:14</sys_updated_on>
+        <sys_updated_on>2022-03-22 18:15:09</sys_updated_on>
     </sys_script_include>
 </record_update>
