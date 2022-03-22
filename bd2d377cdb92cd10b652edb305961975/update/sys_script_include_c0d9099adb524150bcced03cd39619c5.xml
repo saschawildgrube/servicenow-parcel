@@ -19,7 +19,8 @@
 		return false;
 	}
 	
-	
+
+	/*
 	var pageSize = new sn_pdfgeneratorutils.PdfPage('A4');
 	var document = new sn_pdfgeneratorutils.Document.createDocument(pageSize);
 	var pages = 1;
@@ -41,7 +42,7 @@
 
 	function qrcode()
 	{
-		var arr = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL()+'?parcel='+grParcel.sys_id);
+		var arr = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL(grParcel.sys_id));
 
 		var num = 1;
 		var xpos = 40;
@@ -120,16 +121,17 @@
 
 
 //	document.saveAsAttachment('x_snc_parcel_parcel', grParcel.sys_id, grParcel.number+'.pdf');	
-	
+	*/
 
-	
+	/*
 	
 var loc_name = "demo_name";
 var loc_street = "demo_street";
 
 // ID
 var parcel_id = "PARCEL-21";
-
+	
+	
 var case_id = "MSC0001027";
 
 // QR
@@ -150,13 +152,6 @@ var color = "background-color: #000;";
 var num_pages = 4;
 var total_qr_width = (21.0 - 2*xpos); // qr: 80% of page width without margin
 
-var headerFooterInfo = {
-    "GeneratePageNumber": "false",
-    "LeftOrRightMargin": "0",
-    "PageOrientation": "PORTRAIT",
-    "PageSize": "A4",
-    "TopOrBottomMargin": "0"
-};
 
 // DEMO DATA ---------->
 var gr = new GlideRecord('cmn_location');
@@ -167,20 +162,9 @@ if (gr.next()) {
     ship_to_street = gr.street;
 }
 
-function randomSquareTable(width) {
-    var result = [];
-    for (var i = 0 ; i < width; i++) {
-        result[i] = [];
-        for (var j = 0; j < width; j++) {
-            result[i][j] = Math.round(Math.random());
-        }
-    }
-    return result;
-}
-// <----------
 
 //var arr = randomSquareTable(50);
-var arr = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL()+'?parcel='+grParcel.sys_id);
+var arr = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL(grParcel.sys_id));
 	
 	var width = total_qr_width / arr.length;
 
@@ -190,14 +174,14 @@ for (x=0; x<arr.length; x++) {
     }
 }
 
-function makeDiv(heading, content, font_size, padding_top) {
+function makeDiv(heading, content, font_size, padding_top)
+{
     var content_font_size = font_size * 0.8;
     var ret = '<div style="font-size: ' + font_size + 'px;padding-top: '+padding_top+'cm;padding-left: 2cm;">' + heading + '</div>';
     if (content) ret += '<div style="font-size: ' + content_font_size + 'px;padding-left: 2cm;">' + content.replace('\n', '<br>') +'</div>'
     return ret;
 }
 
-var v = new sn_pdfgeneratorutils.PDFGenerationAPI;
 
 var divs = "";
 
@@ -214,25 +198,42 @@ for (i=0; i<num_pages; i++) {
     divs += '<div style="width: 21cm; height: 29.7cm; border: 0px;">' + qr+parcel_id_div + adr_div + from_div + case_id_div +'</div>';
 }
 
-var html = "<html><head><body>" + divs + "</body></html>";
-gs.info(html);
-var result = v.convertToPDFWithHeaderFooter(html,'x_snc_parcel_parcel', grParcel.sys_id, grParcel.number+'.pdf', headerFooterInfo);
+*/
 
+	var strHtml = '<html><head></head><body>';
+		
+	strHtml += HtmlRenderParcelLabelA4(grParcel); 
+			
+	strHtml += '</body></html>';
 	
+	Debug(strHtml);
+	
+	
+	
+	var vResult = x_snc_devtools.CreatePDFFromHtml(
+		'x_snc_parcel_parcel',
+		grParcel.sys_id,
+		grParcel.number+'.pdf',
+		strHtml,
+		'A4',
+		'PORTRAIT',
+		0,0,
+		false)
 
+	return vResult;
 	
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-19 21:14:39</sys_created_on>
         <sys_id>c0d9099adb524150bcced03cd39619c5</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>CreateParcelLabel</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_c0d9099adb524150bcced03cd39619c5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-22 08:33:22</sys_updated_on>
+        <sys_updated_on>2022-03-22 11:43:23</sys_updated_on>
     </sys_script_include>
 </record_update>

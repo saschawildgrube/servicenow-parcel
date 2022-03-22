@@ -2,12 +2,12 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_snc_parcel.HtmlRenderPageParcelLabel</api_name>
+        <api_name>x_snc_parcel.HtmlRenderParcelLabelA4</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
-        <name>HtmlRenderPageParcelLabel</name>
-        <script><![CDATA[function HtmlRenderPageParcelLabel()
+        <name>HtmlRenderParcelLabelA4</name>
+        <script><![CDATA[function HtmlRenderParcelLabelA4(grParcel)
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
@@ -15,18 +15,11 @@
 	
 	var strHtml = '';
 	
-	var strParcel = GetStringValue(RP.getParameterValue('parcel'));
-	var grParcel = GetParcelRecord(strParcel);
 	if (IsValidRecord(grParcel) == false)
 	{
-		//strHtml += '<script>top.window.href = "'+GetInstanceURL()+'";</script>';
 		strHtml += '<p style="text-color: red;">ERROR!</p>';
 		return strHtml;
 	}
-	
-	
-	return HtmlRenderParcelLabelA4(grParcel);
-	
 	
 	var strUrl = GetParcelScanPageURL(grParcel.sys_id);
 
@@ -76,42 +69,95 @@
 	strHtml += '<div style="font-size: '+StringLengthToFontSize(20)+';">ABCDEFGHIJABCDEFGHIJ</div>';
 	strHtml += '<div style="font-size: '+StringLengthToFontSize(30)+';">ABCDEFGHIJABCDEFGHIJABCDEFGHIJ</div>';
 	*/
-	
-	strHtml += '<div width="100%" style="font-size: '+StringLengthToFontSize(GetStringValue(grParcel.number).length)+';">' + grParcel.number + '</div>';
-	
-	//strHtml += '<div style="font-size: 500%;">MEDICAL SUPPLIES</div>';
 
+	
+	//strHtml += '<div id="qrcode" style="width:100%; margin-top:15px;" url="'+strUrl+'" height="500" width="500"></div>';
+	
+	
+	
+	function HtmlRenderBitmap(aBitmap/*, nWidth*/)
+	{
+		
+		//var arr = aRawData;
+		
+		if (x_snc_devtools.GetType(aBitmap) != 'Array')
+		{
+			return '';
+		}
+		
+		
+		//var xpos = 4.0; // cm from left
+		var xpos = 2; // cm from left
+
+		//var ypos = 4.0; // cm from top
+		var ypos = 4;
+		var color = "background-color: #000;";
+		//var nWidth = (21.0 - 2*xpos); // qr: 80% of page width without margin	
+		var nWidth = 10.0; 
+
+
+		var width = nWidth / aBitmap.length;
+
+		
+		var strHtml = '';
+		//strHtml += '<div>';
+		
+		for (var nRow = 0; nRow < aBitmap.length; nRow++)
+		{
+			var aRow = aBitmap[nRow];
+			for (var nCol = 0; nCol < aRow.length; nCol++)
+			{
+				if (aBitmap[nRow][nCol] == true)
+				{
+					strHtml += '<div style="position: absolute;'
+						+ ' left: ' + ((nRow * width) + xpos) + 'cm;'
+						+ ' top: ' + ((nCol * width) + ypos) + 'cm;'
+						+ ' width: ' + width +'cm;'
+						+ ' height: ' + width +'cm;'
+						+ color + '"/>';
+				}
+			}
+		}
+		//strHtml += '</div>';
+		return strHtml;
+	}
+	
+	// QR CODE
+	var aQRCode = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL(grParcel.sys_id));
+	strHtml += HtmlRenderBitmap(aQRCode);
+
+	// PARCEL NUMBER
+	strHtml += '<div style="font-size: '+StringLengthToFontSize(GetStringValue(grParcel.number).length)+';">' + grParcel.number + '</div>';
+
+	// TEXT
 	var strText = GetStringValue(grParcel.text);
 	if (strText != '')
 	{
-		strHtml += '<div style="width: 100%; font-size: 100%;">';
+		strHtml += '<div style="font-size: 100%;">';
 		strHtml += strText+' ';
 		strHtml += '</div>';
 	}	
 	
-	strHtml += '<div id="qrcode" style="width:100%; margin-top:15px;" url="'+strUrl+'" height="500" width="500"></div>';
 	
 	
+	// SHIP TO
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
 	if (IsValidRecord(grLocation))
 	{
-		strHtml += '<div width="200px" style="font-size: 400%;"><b>SHIP TO</b></div>'
-		strHtml += '<div style="font-size: 200%;">';
-		
-		strHtml += '<div>'+grLocation.name+'</div>';
-		strHtml += '<div>'+grLocation.street+'</div>';
-		strHtml += '<div>'+grLocation.zip+' '+grLocation.city+' '+grLocation.state+' '+grLocation.country+'</div>';
-		//strHtml += '<div>'+grLocation.country+'</div>';
-
-		
+		strHtml += '<div style="font-size: 350%;"><b>SHIP TO</b></div>'
+		strHtml += '<div style="font-size: 200%; line-height: 130%;">';
+			strHtml += '<div>'+grLocation.name+'</div>';
+			strHtml += '<div>'+GetStringValue(grLocation.street).replace('\n', '<br/>')+'</div>';
+			strHtml += '<div>'+grLocation.zip+' '+grLocation.city+' '+grLocation.state+' '+grLocation.country+'</div>';
 		strHtml += '</div>';
 		
 	}
 
+	// SHIP FROM
 	var grLocationSender = GetRecord('cmn_location',grParcel.sender);
 	if (IsValidRecord(grLocationSender))
 	{
-		strHtml += '<div style="width: 100%; font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 3px;">';
+		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 3px;">';
 		strHtml += '<b>SHIP FROM</b> ';
 		strHtml += grLocationSender.name+' ';
 		strHtml += grLocationSender.street+' ';
@@ -119,30 +165,44 @@
 		strHtml += grLocationSender.country;		
 		strHtml += '</div>';
 	}	
-		
+
+	// TASK/CASE
 	var grTask = GetRecord('task',grParcel.task);
 	if (IsValidRecord(grTask))
 	{
-		strHtml += '<div style="width: 100%; font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 3px;">';
+		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 3px;">';
 		strHtml += '<b>TASK/CASE</b> ';
 		strHtml += grTask.number+' ';
 		strHtml += '</div>';
 	}
+
+	function HtmlRenderPageA4(strContent)
+	{
+		var strHtml = '';
+		
+		strHtml += '<div style="width: 21cm; height: 29.7cm; border: 0px; padding: 1cm 1cm 1cm 1cm;">';
+			strHtml += '<div style="width: 19cm; height: 27.7cm;">';
+				strHtml += strContent;
+			strHtml += '</div>';
+		strHtml += '</div>';
+		return strHtml;
+	}	
 	
+	strHtml = HtmlRenderPageA4(strHtml);
 	
 	return strHtml;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-03-16 19:35:17</sys_created_on>
-        <sys_id>22c599d9db124150b652edb30596193b</sys_id>
-        <sys_mod_count>59</sys_mod_count>
-        <sys_name>HtmlRenderPageParcelLabel</sys_name>
+        <sys_created_on>2022-03-22 09:53:20</sys_created_on>
+        <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>HtmlRenderParcelLabelA4</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
-        <sys_update_name>sys_script_include_22c599d9db124150b652edb30596193b</sys_update_name>
+        <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-22 11:20:09</sys_updated_on>
+        <sys_updated_on>2022-03-22 11:46:14</sys_updated_on>
     </sys_script_include>
 </record_update>

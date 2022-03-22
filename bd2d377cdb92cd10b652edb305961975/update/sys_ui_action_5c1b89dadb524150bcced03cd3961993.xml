@@ -29,7 +29,16 @@
         <name>Create Label (PDF)</name>
         <onclick/>
         <order>100</order>
-        <script><![CDATA[CreateParcelLabel(current.sys_id);
+        <script><![CDATA[var vResult = CreateParcelLabel(current.sys_id);
+
+if (vResult === false)
+{
+	gs.addErrorMessage('Failed to create parcel label');
+}
+else
+{
+	gs.addInfoMessage('Parcel label has been created and attached to the parcel record.');
+}
 
 x_snc_devtools.RedirectToRecord(current);]]></script>
         <show_insert>true</show_insert>
@@ -42,15 +51,15 @@ x_snc_devtools.RedirectToRecord(current);]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5c1b89dadb524150bcced03cd3961993</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Create Label (PDF)</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_action_5c1b89dadb524150bcced03cd3961993</sys_update_name>
-        <sys_updated_by>jerker.tojen</sys_updated_by>
-        <sys_updated_on>2022-03-20 05:58:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-22 09:35:55</sys_updated_on>
         <table>x_snc_parcel_parcel</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
