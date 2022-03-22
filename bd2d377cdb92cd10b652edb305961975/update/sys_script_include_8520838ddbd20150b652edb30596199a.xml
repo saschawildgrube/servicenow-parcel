@@ -7,13 +7,14 @@
         <client_callable>false</client_callable>
         <description>Creates a new parcel based on a destination location and a task  </description>
         <name>CreateParcel</name>
-        <script><![CDATA[function CreateParcel(strDestinationLocationSysId,strSenderLocationSysId,strTaskSysId)
+        <script><![CDATA[function CreateParcel(strDestinationLocationSysId,strSenderLocationSysId,strTaskSysId,strText)
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var IsValidSysId = x_snc_devtools.IsValidSysId;
 	
 	strDestinationLocationSysId = GetStringValue(strDestinationLocationSysId);
 	strTaskSysId = GetStringValue(strTaskSysId);
+	strText = GetStringValue(strText);
 	
 	var grParcel = new GlideRecord('x_snc_parcel_parcel');
 	grParcel.initialize();
@@ -29,6 +30,7 @@
 	{
 		grParcel.task = strTaskSysId;
 	}
+	grParcel.text = strText;
 	var strParcelSysId = grParcel.insert();
 	return strParcelSysId;
 }]]></script>
@@ -36,13 +38,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 08:41:41</sys_created_on>
         <sys_id>8520838ddbd20150b652edb30596199a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>CreateParcel</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_8520838ddbd20150b652edb30596199a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-17 16:33:15</sys_updated_on>
+        <sys_updated_on>2022-03-22 08:41:35</sys_updated_on>
     </sys_script_include>
 </record_update>

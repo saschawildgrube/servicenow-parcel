@@ -4,13 +4,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-03-17 16:26:04</sys_created_on>
-            <sys_id>36e47129dbd68150b652edb305961937</sys_id>
+            <sys_created_on>2022-03-22 08:35:04</sys_created_on>
+            <sys_id>d419398bdbd68950b652edb3059619ac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_parcel_parcel" sys_domain="global" view="Default view">9aeef778dbd2cd10b652edb305961922</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-03-17 16:26:04</sys_updated_on>
+            <sys_updated_on>2022-03-22 08:35:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>task</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-03-17 16:26:04</sys_created_on>
-            <sys_id>b6e47129dbd68150b652edb305961937</sys_id>
+            <sys_created_on>2022-03-22 08:35:04</sys_created_on>
+            <sys_id>5819398bdbd68950b652edb3059619ac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_parcel_parcel" sys_domain="global" view="Default view">9aeef778dbd2cd10b652edb305961922</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-03-17 16:26:04</sys_updated_on>
+            <sys_updated_on>2022-03-22 08:35:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>.split</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-03-17 16:26:04</sys_created_on>
-            <sys_id>3ae47129dbd68150b652edb305961937</sys_id>
+            <sys_created_on>2022-03-22 08:35:04</sys_created_on>
+            <sys_id>d819398bdbd68950b652edb3059619ac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_parcel_parcel" sys_domain="global" view="Default view">9aeef778dbd2cd10b652edb305961922</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-03-17 16:26:04</sys_updated_on>
+            <sys_updated_on>2022-03-22 08:35:04</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>sender</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-03-17 16:26:04</sys_created_on>
-            <sys_id>bae47129dbd68150b652edb305961937</sys_id>
+            <sys_created_on>2022-03-22 08:35:04</sys_created_on>
+            <sys_id>5c19398bdbd68950b652edb3059619ac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_parcel_parcel" sys_domain="global" view="Default view">9aeef778dbd2cd10b652edb305961922</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-03-17 16:26:04</sys_updated_on>
+            <sys_updated_on>2022-03-22 08:35:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,41 @@
             <element>destination</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-03-17 16:26:04</sys_created_on>
-            <sys_id>3ee47129dbd68150b652edb305961937</sys_id>
+            <sys_created_on>2022-03-22 08:35:04</sys_created_on>
+            <sys_id>dc19398bdbd68950b652edb3059619ac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_parcel_parcel" sys_domain="global" view="Default view">9aeef778dbd2cd10b652edb305961922</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-03-17 16:26:04</sys_updated_on>
+            <sys_updated_on>2022-03-22 08:35:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-22 08:35:04</sys_created_on>
+            <sys_id>5019398bdbd68950b652edb3059619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_parcel_parcel" sys_domain="global" view="Default view">9aeef778dbd2cd10b652edb305961922</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-22 08:35:04</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>text</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-22 08:35:04</sys_created_on>
+            <sys_id>d019398bdbd68950b652edb3059619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_parcel_parcel" sys_domain="global" view="Default view">9aeef778dbd2cd10b652edb305961922</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-22 08:35:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

@@ -64,10 +64,9 @@
 		}
 	}
 
-	/*
-var i;
-for (i = pages; i > 0; i--) {
-  */
+//var i;
+//for (i = pages; i > 0; i--) {
+  
   
 	// PARCEL NUMBER
     addPara(70, 0, grParcel.number, true);
@@ -115,25 +114,125 @@ for (i = pages; i > 0; i--) {
 
 	
 
-/*	
-    if (i>1) document.addNewPage();
-}
-*/
+	
+//    if (i>1) document.addNewPage();
+//}
 
-	document.saveAsAttachment('x_snc_parcel_parcel', grParcel.sys_id, grParcel.number+'.pdf');	
+
+//	document.saveAsAttachment('x_snc_parcel_parcel', grParcel.sys_id, grParcel.number+'.pdf');	
+	
+
+	
+	
+var loc_name = "demo_name";
+var loc_street = "demo_street";
+
+// ID
+var parcel_id = "PARCEL-21";
+
+var case_id = "MSC0001027";
+
+// QR
+// TO
+var ship_to = "SHIP TO";
+var ship_to_name = 'Humanitäres Hauptquartier "Svitli spravy" in Mykolaiv\nKominternastr. 34/5\nMykolaiv Mykolaiv Ukraine';
+var ship_to_street = 'Mykolaiv';
+var ship_to_city = 'Mykolaiv Mykolaiv Ukraine';
+
+// SHIP FROM
+var ship_from = "SHIP FROM";
+var ship_from_addr = "Blaues Gelbes Kreuz e.V. Köln Germany";
+
+var qr = "";
+var xpos = 4.0; // cm from left
+var ypos = 4.0; // cm from top
+var color = "background-color: #000;";
+var num_pages = 4;
+var total_qr_width = (21.0 - 2*xpos); // qr: 80% of page width without margin
+
+var headerFooterInfo = {
+    "GeneratePageNumber": "false",
+    "LeftOrRightMargin": "0",
+    "PageOrientation": "PORTRAIT",
+    "PageSize": "A4",
+    "TopOrBottomMargin": "0"
+};
+
+// DEMO DATA ---------->
+var gr = new GlideRecord('cmn_location');
+gr.addQuery('sys_id', '727a005d875a851099e642650cbb35db');
+gr.query();
+if (gr.next()) {
+    ship_to_name = gr.name;
+    ship_to_street = gr.street;
+}
+
+function randomSquareTable(width) {
+    var result = [];
+    for (var i = 0 ; i < width; i++) {
+        result[i] = [];
+        for (var j = 0; j < width; j++) {
+            result[i][j] = Math.round(Math.random());
+        }
+    }
+    return result;
+}
+// <----------
+
+//var arr = randomSquareTable(50);
+var arr = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL()+'?parcel='+grParcel.sys_id);
+	
+	var width = total_qr_width / arr.length;
+
+for (x=0; x<arr.length; x++) {
+    for (y=0; y<arr.length; y++) {
+        if (arr[x][y] == 1) qr += '<div style="position: absolute; left: ' + ((x * width) + xpos) + 'cm; top: ' + ((y * width) + ypos) + 'cm; width: '+width+'cm; height: '+width+'cm;' + color + '"/>';
+    }
+}
+
+function makeDiv(heading, content, font_size, padding_top) {
+    var content_font_size = font_size * 0.8;
+    var ret = '<div style="font-size: ' + font_size + 'px;padding-top: '+padding_top+'cm;padding-left: 2cm;">' + heading + '</div>';
+    if (content) ret += '<div style="font-size: ' + content_font_size + 'px;padding-left: 2cm;">' + content.replace('\n', '<br>') +'</div>'
+    return ret;
+}
+
+var v = new sn_pdfgeneratorutils.PDFGenerationAPI;
+
+var divs = "";
+
+//var qr_placeholder = '<div style="height: 13cm;" />'
+
+var i;
+// ship_to
+var parcel_id_div = makeDiv(parcel_id, undefined, 50, 2);
+var adr_div = makeDiv(ship_to, ship_to_name + '\n' + ship_to_street + '\n' + ship_to_city, 30, 14);
+var from_div = makeDiv(ship_from, ship_from_addr, 15, 4);
+var case_id_div = makeDiv('TASK/CASE', case_id, 15, 0.5);
+
+for (i=0; i<num_pages; i++) {
+    divs += '<div style="width: 21cm; height: 29.7cm; border: 0px;">' + qr+parcel_id_div + adr_div + from_div + case_id_div +'</div>';
+}
+
+var html = "<html><head><body>" + divs + "</body></html>";
+gs.info(html);
+var result = v.convertToPDFWithHeaderFooter(html,'x_snc_parcel_parcel', grParcel.sys_id, grParcel.number+'.pdf', headerFooterInfo);
+
+	
+
 	
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-19 21:14:39</sys_created_on>
         <sys_id>c0d9099adb524150bcced03cd39619c5</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>CreateParcelLabel</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_c0d9099adb524150bcced03cd39619c5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-21 08:54:17</sys_updated_on>
+        <sys_updated_on>2022-03-22 08:33:22</sys_updated_on>
     </sys_script_include>
 </record_update>
