@@ -28,7 +28,7 @@
         <messages/>
         <name>Create Parcel Labels (PDF)</name>
         <onclick/>
-        <order>100</order>
+        <order>0</order>
         <script><![CDATA[CreateParcelLabelsFromTask(current.sys_id);
 x_snc_devtools.RedirectToRecord(current);]]></script>
         <show_insert>false</show_insert>
@@ -41,7 +41,7 @@ x_snc_devtools.RedirectToRecord(current);]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0006b29fdbda0110b652edb305961990</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Create Parcel Labels (PDF)</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -49,7 +49,7 @@ x_snc_devtools.RedirectToRecord(current);]]></script>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_action_0006b29fdbda0110b652edb305961990</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-23 13:40:04</sys_updated_on>
+        <sys_updated_on>2022-03-23 13:41:06</sys_updated_on>
         <table>task</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
