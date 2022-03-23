@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_parcel.GetParcelCountFromTask</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns the number of parcels associated to a given task. </description>
+        <name>GetParcelCountFromTask</name>
+        <script><![CDATA[function GetParcelCountFromTask(strTaskSysId)
+{
+	var IsValidSysId = x_snc_devtools.IsValidSysId;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	
+	if (IsValidSysId(strTaskSysId) == false)
+	{
+		return 0;
+	}
+	
+	var grParcels = new GlideRecord('x_snc_parcel_parcel');
+	grParcels.addQuery('task','=',strTaskSysId);
+	grParcels.query();
+	return GetIntegerValue(grParcels.getRowCount());
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-23 07:39:12</sys_created_on>
+        <sys_id>6b65fa1fdbda0110b652edb305961954</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GetParcelCountFromTask</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_script_include_6b65fa1fdbda0110b652edb305961954</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-23 07:39:35</sys_updated_on>
+    </sys_script_include>
+</record_update>
