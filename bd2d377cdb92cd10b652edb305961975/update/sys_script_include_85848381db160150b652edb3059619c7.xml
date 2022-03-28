@@ -33,9 +33,14 @@
 
 	function HtmlRenderPageParcelScanStateSelectOption(grParcel)
 	{
-		var grProfile = GetProfileRecord(grParcel.profile);
 		var strProfileSysId = '';
 		var strTidTextScan = '';
+
+		var grProfile = GetProfileRecord(grParcel.profile);
+		if (IsValidRecord(grProfile) == false)
+		{
+			grProfile = GetProfileRecord(GetDefaultProfile());
+		}
 		if (IsValidRecord(grProfile))
 		{
 			strProfileSysId = GetStringValue(grProfile.sys_id);
@@ -87,9 +92,13 @@
 
 	function HtmlRenderPageParcelScanStateCreateEvent(grParcel,grOption)
 	{
+		var strTidInfoScanSuccess = '';
 		
 		var grProfile = GetProfileRecord(grParcel.profile);
-		var strTidInfoScanSuccess = '';
+		if (IsValidRecord(grProfile) == false)
+		{
+			grProfile = GetProfileRecord(GetDefaultProfile());
+		}
 		if (IsValidRecord(grProfile))
 		{
 			strTidInfoScanSuccess = StringReplace(grProfile.tid_info_scan_success,'\n','<br/>');
@@ -180,13 +189,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 08:58:22</sys_created_on>
         <sys_id>85848381db160150b652edb3059619c7</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>HtmlRenderPageParcelScan</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_85848381db160150b652edb3059619c7</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-28 11:04:06</sys_updated_on>
+        <sys_updated_by>sascha.wildgrube</sys_updated_by>
+        <sys_updated_on>2022-03-28 12:22:40</sys_updated_on>
     </sys_script_include>
 </record_update>
