@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Parcel Profile" max_length="40" name="x_snc_parcel_profile" type="collection">
+        <element label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="UI Text: After scanning" max_length="1000" name="tid_info_scan_success" type="string"/>
+        <element label="UI Text: Scan page" max_length="1000" name="tid_text_scan" type="string"/>
+    </element>
+</database>

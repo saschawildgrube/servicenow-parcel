@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="tid_info_scan_success" label="UI Text: After scanning" language="en" table="x_snc_parcel_profile">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>tid_info_scan_success</element>
+            <help/>
+            <hint/>
+            <label>UI Text: After scanning</label>
+            <language>en</language>
+            <name>x_snc_parcel_profile</name>
+            <plural>UI Text: After scannings</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-28 09:50:58</sys_created_on>
+            <sys_id>e2f301c5dbaa0910bcced03cd3961988</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>UI Text: After scanning</sys_name>
+            <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_parcel_profile_tid_info_scan_success_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-28 09:50:58</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

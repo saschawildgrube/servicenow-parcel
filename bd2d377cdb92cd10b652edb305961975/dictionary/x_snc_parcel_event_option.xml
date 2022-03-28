@@ -3,7 +3,11 @@
         <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
         <element display="true" label="Name" max_length="200" name="name" type="string"/>
         <element label="Order" max_length="40" name="order" type="integer"/>
+        <element label="Profile" mandatory="true" max_length="32" name="profile" reference="x_snc_parcel_profile" type="reference"/>
         <index name="index">
+            <element name="profile"/>
+        </index>
+        <index name="index2">
             <element name="location"/>
         </index>
     </element>
