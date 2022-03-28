@@ -15,15 +15,16 @@
 	var GetRecord = x_snc_devtools.GetRecord;
 	var GetInstanceURL = x_snc_devtools.GetInstanceURL;
 	var GetBoolValue = x_snc_devtools.GetBoolValue;
+	var StringReplace = x_snc_devtools.StringReplace;
 	
 	function HtmlRenderPageParcelScanStateEnterNumber()
 	{
 		strHtml = '';
-		strHtml += '<h1>Enter PARCEL number!</h1>';
+		//strHtml += '<h1>SCAN PARCEL</h1>';
 		strHtml += '<form action="'+GetParcelScanPageURL()+'" method="get">';
 		strHtml += '<b>PARCEL-</b>';
 		strHtml += '<input type="text" name="parcel" maxlen="6" pattern="[0-9]*"></input>';
-		strHtml += '<input type="submit" name="" value="GO!"></input>';
+		strHtml += '<input type="submit" name="" value="Scan Parcel"></input>';
 		strHtml += '</form>';
 		
 		return strHtml;
@@ -32,9 +33,22 @@
 
 	function HtmlRenderPageParcelScanStateSelectOption(grParcel)
 	{
+		var grProfile = GetProfileRecord(grParcel.profile);
+		var strProfileSysId = '';
+		var strTidTextScan = '';
+		if (IsValidRecord(grProfile))
+		{
+			strProfileSysId = GetStringValue(grProfile.sys_id);
+			strTidTextScan = GetStringValue(grProfile.tid_text_scan);
+		}
+
 		strHtml = '';
 		strHtml += '<h1>'+grParcel.number+'</h1>';
 
+		if (strTidTextScan != '')
+		{
+			strHtml += '<p>'+StringReplace(strTidTextScan,'\n','<br/>')+'</p>';
+		}
 		
 		function HtmlRenderLinkButton(strURL,strText,bExternal)
 		{
@@ -59,6 +73,7 @@
 		}	
 		
 		var grPEO = new GlideRecord('x_snc_parcel_event_option');
+		grPEO.addQuery('profile','=',strProfileSysId);
 		grPEO.orderBy('order');
 		grPEO.query();
 		while (grPEO.next())
@@ -72,6 +87,20 @@
 
 	function HtmlRenderPageParcelScanStateCreateEvent(grParcel,grOption)
 	{
+		
+		var grProfile = GetProfileRecord(grParcel.profile);
+		var strTidInfoScanSuccess = '';
+		if (IsValidRecord(grProfile))
+		{
+			strTidInfoScanSuccess = StringReplace(grProfile.tid_info_scan_success,'\n','<br/>');
+		}
+		
+		if (strTidInfoScanSuccess == '')
+		{
+			strTidInfoScanSuccess = 'Parcel status has been updated successfully!<br/>You can now scan the next parcel by entering the parcel number below:';
+		}
+		
+		
 		strHtml = '';
 		
 		strHtml += '<h1>'+grParcel.number+'</h1>';
@@ -80,7 +109,7 @@
 		
 		if (IsValidSysId(strEventSysId) == true)
 		{
-			strHtml += '<p>Thank you!</p>';
+			strHtml += '<p>'+strTidInfoScanSuccess+'</p>';
 			strHtml += HtmlRenderPageParcelScanStateEnterNumber();
 		}
 		else
@@ -151,13 +180,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 08:58:22</sys_created_on>
         <sys_id>85848381db160150b652edb3059619c7</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>HtmlRenderPageParcelScan</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_85848381db160150b652edb3059619c7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-23 14:25:46</sys_updated_on>
+        <sys_updated_on>2022-03-28 11:04:06</sys_updated_on>
     </sys_script_include>
 </record_update>
