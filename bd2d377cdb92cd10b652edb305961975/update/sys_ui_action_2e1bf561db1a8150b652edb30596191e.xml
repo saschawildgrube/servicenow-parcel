@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
-        <active>false</active>
+        <active>true</active>
         <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
-        <comments>Opens up the parcel label in a new tab.</comments>
+        <comments>Opens up the parcel scan page a new tab.</comments>
         <condition/>
         <form_action>true</form_action>
-        <form_button>true</form_button>
+        <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
         <form_context_menu>false</form_context_menu>
-        <form_link>false</form_link>
+        <form_link>true</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
         <form_style/>
         <hint/>
@@ -26,12 +26,12 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>View Label (HTML) (inactive)</name>
-        <onclick>PrintLabel()</onclick>
+        <name>Scan Parcel</name>
+        <onclick>ScanParcel()</onclick>
         <order>100</order>
-        <script><![CDATA[function PrintLabel()
+        <script><![CDATA[function ScanParcel()
 {
-	var strUrl = '/x_snc_parcel_label.do?parcel='+g_form.getValue('number');
+	var strUrl = '/x_snc_parcel_scan.do?parcel='+g_form.getValue('number');
 	top.window.open(strUrl, '_blank');
 }]]></script>
         <show_insert>true</show_insert>
@@ -44,15 +44,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2e1bf561db1a8150b652edb30596191e</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>View Label (HTML) (inactive)</sys_name>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Scan Parcel</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_action_2e1bf561db1a8150b652edb30596191e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-23 13:39:22</sys_updated_on>
+        <sys_updated_on>2022-03-28 10:38:53</sys_updated_on>
         <table>x_snc_parcel_parcel</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
