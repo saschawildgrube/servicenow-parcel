@@ -12,6 +12,7 @@
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetRecord = x_snc_devtools.GetRecord;
+	var StringReplace = x_snc_devtools.StringReplace;
 	
 	var strHtml = '';
 	
@@ -24,177 +25,7 @@
 	
 	var strUrl = GetParcelScanPageURL(grParcel.sys_id);
 
-	function StringReplace(strHaystack,strNeedle,strReplace)
-	{
-		strHaystack = GetStringValue(strHaystack);
-		return strHaystack.replaceAll(strNeedle,strReplace);
-	}
-	
-	function StringLengthToFontSize(nLength)
-	{
-		var GetIntegerValue = x_snc_devtools.GetIntegerValue;
-		nLength = GetIntegerValue(nLength);
-		if (nLength <= 5)
-		{
-			return '1500%';
-		}
-		if (nLength <= 7)
-		{
-			return '1200%';
-		}		
-		if (nLength <= 10)
-		{
-			return '600%';
-		}
-		if (nLength <= 15)
-		{
-			return '450%';
-		}
-		if (nLength <= 20)
-		{
-			return '350%';
-		}	
-		if (nLength <= 30)
-		{
-			return '300%';
-		}			
-		return '100%';
-	}
 
-	/*
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(5)+';">12345</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(7)+';">1234567</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(10)+';">1234567890</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(15)+';">123456789012345</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(20)+';">12345678901234567890</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(30)+';">123456789012345678901234567890</div>';
-
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(5)+ ';">ABCDE</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(7)+ ';">ABCDEFG</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(10)+';">ABCDEFGHIJ</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(15)+';">ABCDEFGHIJABCDE</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(20)+';">ABCDEFGHIJABCDEFGHIJ</div>';
-	strHtml += '<div style="font-size: '+StringLengthToFontSize(30)+';">ABCDEFGHIJABCDEFGHIJABCDEFGHIJ</div>';
-	*/
-
-	
-	//strHtml += '<div id="qrcode" style="width:100%; margin-top:15px;" url="'+strUrl+'" height="500" width="500"></div>';
-	
-	
-	
-	function HtmlRenderBitmap(aBitmap/*, nWidth*/)
-	{
-		
-		//var arr = aRawData;
-		
-		if (x_snc_devtools.GetType(aBitmap) != 'Array')
-		{
-			return '';
-		}
-		
-		
-		//var xpos = 4.0; // cm from left
-		var xpos = 0; // cm from left
-
-		//var ypos = 4.0; // cm from top
-		var ypos = 5;
-		var color = "background-color: #000;";
-		//var nWidth = (21.0 - 2*xpos); // qr: 80% of page width without margin	
-		var nWidth = 12.0; 
-
-
-		var width = nWidth / aBitmap.length;
-
-		
-		var strHtml = '';
-		strHtml += '<div style="position: absolute; width: 13cm;">';
-		
-		for (var nRow = 0; nRow < aBitmap.length; nRow++)
-		{
-			var aRow = aBitmap[nRow];
-			for (var nCol = 0; nCol < aRow.length; nCol++)
-			{
-				if (aBitmap[nRow][nCol] == true)
-				{
-					strHtml += '<div style="position: absolute;'
-						+ ' left: ' + ((nRow * width) + xpos) + 'cm;'
-						+ ' top: ' + ((nCol * width) + ypos) + 'cm;'
-						+ ' width: ' + width +'cm;'
-						+ ' height: ' + width +'cm;'
-						+ color + '"/>';
-				}
-			}
-		}
-		strHtml += '</div>';
-		return strHtml;
-	}
-	
-	
-	function HtmlRenderBitmap2(aBitmap/*, nWidth*/)
-	{
-		
-		//var arr = aRawData;
-		
-		if (x_snc_devtools.GetType(aBitmap) != 'Array')
-		{
-			return '';
-		}
-		
-		
-		//var xpos = 4.0; // cm from left
-		var xpos = 0; // cm from left
-
-		//var ypos = 4.0; // cm from top
-		var ypos = 5;
-		var colorTrue = "background-color: #000;";
-		var colorFalse = "background-color: #FFF;";
-
-		//var nWidth = (21.0 - 2*xpos); // qr: 80% of page width without margin	
-		var nWidth = 12.0; 
-
-
-		var width = nWidth / aBitmap.length;
-
-		
-		var strHtml = '';
-		strHtml += '<div style="padding-top: 10px; padding-bottom: 10px;">';
-		strHtml += '<table style="'
-			+ 'width: 13cm;'
-			+ 'border: 0px;'
-			+ 'border-collapse: collapse;'
-			+ 'border-spacing: 0;'
-			+'"><tbody>';
-		
-		for (var nRow = 0; nRow < aBitmap.length; nRow++)
-		{
-			strHtml += '<tr>';
-
-			var aRow = aBitmap[nRow];
-			for (var nCol = 0; nCol < aRow.length; nCol++)
-			{
-				var color = colorFalse;
-				if (aBitmap[nRow][nCol] == true)
-				{
-					color = colorTrue;
-				}
-				strHtml += '<td style="'
-					+ ' border: 0px;'
-					+ ' margin: 0px;'
-					+ ' padding: 0px;'
-					+ ' width: ' + width +'cm;'
-					+ ' height: ' + width +'cm;'
-					+ color + '"/>';
-
-			}
-			strHtml += '</tr>';
-
-		}
-		strHtml += '</tbody></table>';
-		strHtml += '</div>';
-
-		return strHtml;
-	}	
-	
 	
 	// PARCEL NUMBER
 	//strHtml += '<div style="font-size: '+StringLengthToFontSize(GetStringValue(grParcel.number).length)+';">' + grParcel.number + '</div>';
@@ -211,10 +42,7 @@
 	}	
 
 	// QR CODE
-	var aQRCode = x_snc_devtools.CreateQRCodeRawData(GetParcelScanPageURL(grParcel.sys_id));
-	strHtml += HtmlRenderBitmap2(aQRCode);
-
-	//strHtml += '<div style="height: 13cm;"/>';
+	strHtml += x_snc_devtools.HtmlRenderQRCode(strUrl,10,'cm');
 	
 	// SHIP TO
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
@@ -224,7 +52,8 @@
 		strHtml += '<div style="font-size: 200%; line-height: 130%;">';
 			strHtml += '<div>'+grLocation.name+'</div>';
 			strHtml += '<div>'+StringReplace(grLocation.street,'\n','<br/>')+'</div>';
-			strHtml += '<div>'+grLocation.zip+' '+grLocation.city+' '+grLocation.state+' '+grLocation.country+'</div>';
+			strHtml += '<div>'+grLocation.zip+' '+grLocation.city+'</div>';
+			strHtml += '<div>'+grLocation.state+' '+grLocation.country+'</div>';
 		strHtml += '</div>';
 		
 	}
@@ -261,13 +90,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-22 09:53:20</sys_created_on>
         <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
-        <sys_mod_count>67</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>HtmlRenderParcelLabelA4</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-23 11:00:30</sys_updated_on>
+        <sys_updated_on>2022-03-28 09:33:03</sys_updated_on>
     </sys_script_include>
 </record_update>
