@@ -13,6 +13,8 @@
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetRecord = x_snc_devtools.GetRecord;
 	var StringReplace = x_snc_devtools.StringReplace;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var HtmlRenderQRCode = x_snc_devtools.HtmlRenderQRCode;
 	
 	var strHtml = '';
 	
@@ -24,8 +26,6 @@
 	}
 	
 	var strUrl = GetParcelScanPageURL(grParcel.sys_id);
-
-
 	
 	// PARCEL NUMBER
 	strHtml += '<div style="font-size: 400%;">' + grParcel.number + '</div>';
@@ -40,7 +40,7 @@
 	}	
 
 	// QR CODE
-	strHtml += x_snc_devtools.HtmlRenderQRCode(strUrl,10,'cm');
+	strHtml += HtmlRenderQRCode(strUrl,10,'cm');
 	
 	// SHIP TO
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
@@ -53,14 +53,13 @@
 			strHtml += '<div>'+grLocation.zip+' '+grLocation.city+'</div>';
 			strHtml += '<div>'+grLocation.state+' '+grLocation.country+'</div>';
 		strHtml += '</div>';
-		
 	}
 
 	// SHIP FROM
 	var grLocationSender = GetRecord('cmn_location',grParcel.sender);
 	if (IsValidRecord(grLocationSender))
 	{
-		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 3px;">';
+		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 5px;">';
 		strHtml += '<b>SHIP FROM</b> ';
 		strHtml += grLocationSender.name+' ';
 		strHtml += grLocationSender.street+' ';
@@ -69,6 +68,28 @@
 		strHtml += '</div>';
 	}	
 
+	// CONTACTS
+	var aContacts = GetArrayValue(grParcel.contacts);
+	if (aContacts.length > 0)
+	{
+		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 5px;">';
+		strHtml += '<b>CONTACTS</b><br/>';		
+		for (var nContact = 0; nContact < aContacts.length; nContact++)
+		{
+			var grUser = GetRecord('sys_user',aContacts[nContact]);
+			if (IsValidRecord(grUser) == true)
+			{
+				var strFunction = GetStringValue(grUser.x_snc_parcel_function);
+				if (strFunction != '')
+				{
+					strFunction = ' ('+strFunction+')';
+				}
+				strHtml += '' + grUser.name + ' ' + grUser.mobile_phone + strFunction + '<br/>';
+			}
+		}
+		strHtml += '</div>';
+	}	
+	
 	// TASK/CASE
 	var grTask = GetRecord('task',grParcel.task);
 	if (IsValidRecord(grTask))
@@ -79,7 +100,7 @@
 		strHtml += '</div>';
 	}
 
-
+	// 
 	strHtml = x_snc_devtools.HtmlRenderPageA4(strHtml,1,1);
 	
 	return strHtml;
@@ -88,13 +109,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-22 09:53:20</sys_created_on>
         <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
-        <sys_mod_count>74</sys_mod_count>
+        <sys_mod_count>83</sys_mod_count>
         <sys_name>HtmlRenderParcelLabelA4</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-28 10:42:18</sys_updated_on>
+        <sys_updated_on>2022-03-30 13:23:08</sys_updated_on>
     </sys_script_include>
 </record_update>
