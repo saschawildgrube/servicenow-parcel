@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_parcel.GetContactsFromParcels</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Gets contact details of all contacts associated with one or more parcels identified by their sys ids.</description>
+        <name>GetContactsFromParcels</name>
+        <script><![CDATA[function GetContactsFromParcels(vParcels)
+{
+	var ArrayPushUnique = x_snc_devtools.ArrayPushUnique;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var ArrayAppend = x_snc_devtools.ArrayAppend;
+	var GetRecord = x_snc_devtools.GetRecord;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var ArrayUnique = x_snc_devtools.ArrayUnique;
+	var GetValue = x_snc_devtools.GetValue;
+
+	
+	var aParcelSysIds = GetArrayValue(vParcels);
+
+	var aContactSysIds = Array();
+	var contacts_to_parcels = {};
+	for (var nParcel = 0; nParcel < aParcelSysIds.length; nParcel++)
+	{
+		var grParcel = GetParcelRecord(aParcelSysIds[nParcel]);
+		if (IsValidRecord(grParcel) == true)
+		{
+			var aParcelContactSysIds = GetArrayValue(grParcel.contacts);
+			aContactSysIds = ArrayAppend(aContactSysIds,aParcelContactSysIds);
+			
+			for (var nParcelContact = 0; nParcelContact < aParcelContactSysIds.length; nParcelContact++)
+			{
+				contacts_to_parcels[aParcelContactSysIds[nParcelContact]] =
+					ArrayPushUnique(contacts_to_parcels[aParcelContactSysIds[nParcelContact]],GetStringValue(grParcel.number));
+			}
+			
+		}
+	}
+	
+	aContactSysIds = ArrayUnique(aContactSysIds);
+
+	var aContacts = Array();
+	for (var nContact = 0; nContact < aContactSysIds.length; nContact++)
+	{
+		var grUser = GetRecord('sys_user',aContactSysIds[nContact]);
+		if (IsValidRecord(grUser) == true)
+		{
+			var contact = {};
+			contact.parcels = GetStringValue(GetValue(contacts_to_parcels,grUser.sys_id));
+			contact.name = GetStringValue(grUser.name);
+			contact.mobile_phone = GetStringValue(grUser.mobile_phone);
+			contact.parcel_function = GetStringValue(grUser.x_snc_parcel_function);
+			aContacts.push(contact);
+		}
+	}
+	return aContacts;
+}
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-01 13:11:09</sys_created_on>
+        <sys_id>fd281e12db624150bcced03cd396198c</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GetContactsFromParcels</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_script_include_fd281e12db624150bcced03cd396198c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-01 13:25:37</sys_updated_on>
+    </sys_script_include>
+</record_update>
