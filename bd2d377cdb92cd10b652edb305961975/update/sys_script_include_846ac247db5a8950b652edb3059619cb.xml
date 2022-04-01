@@ -28,25 +28,25 @@
 	var strUrl = GetParcelScanPageURL(grParcel.sys_id);
 	
 	// PARCEL NUMBER
-	strHtml += '<div style="font-size: 400%;">' + grParcel.number + '</div>';
+	strHtml += '<div style="font-size: 200%;"><b>' + grParcel.number + '</b></div>';
 
 	// TEXT
 	var strText = GetStringValue(grParcel.text);
 	if (strText != '')
 	{
-		strHtml += '<div style="font-size: 100%; line-height: 120%;">';
+		strHtml += '<div style="font-size: 180%; line-height: 100%;">';
 		strHtml += StringReplace(strText,'\n','<br/>')+' ';
 		strHtml += '</div>';
 	}	
 
 	// QR CODE
-	strHtml += HtmlRenderQRCode(strUrl,10,'cm');
+	strHtml += HtmlRenderQRCode(strUrl,9,'cm');
 	
 	// SHIP TO
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
 	if (IsValidRecord(grLocation))
 	{
-		strHtml += '<div style="font-size: 350%;"><b>SHIP TO</b></div>'
+		strHtml += '<div style="font-size: 200%;"><b>SHIP TO</b></div>'
 		strHtml += '<div style="font-size: 200%; line-height: 130%;">';
 			strHtml += '<div>'+grLocation.name+'</div>';
 			strHtml += '<div>'+StringReplace(grLocation.street,'\n','<br/>')+'</div>';
@@ -109,13 +109,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-22 09:53:20</sys_created_on>
         <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
-        <sys_mod_count>83</sys_mod_count>
+        <sys_mod_count>88</sys_mod_count>
         <sys_name>HtmlRenderParcelLabelA4</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-30 13:23:08</sys_updated_on>
+        <sys_updated_on>2022-04-01 06:58:50</sys_updated_on>
     </sys_script_include>
 </record_update>
