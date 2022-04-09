@@ -3,12 +3,13 @@
         <element label="Categories" max_length="4000" name="categories" reference="x_snc_parcel_category" type="glide_list"/>
         <element label="Contacts" max_length="4000" name="contacts" reference="sys_user" type="glide_list"/>
         <element label="Destination" max_length="32" name="destination" reference="cmn_location" type="reference"/>
-        <element default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="20" name="number" type="string" use_dynamic_default="true"/>
+        <element default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="20" name="number" read_only="true" type="string" use_dynamic_default="true"/>
         <element label="Parts" max_length="40" name="parts" read_only="true" type="integer"/>
         <element label="Profile" max_length="32" name="profile" reference="x_snc_parcel_profile" type="reference"/>
         <element label="Sender" max_length="32" name="sender" reference="cmn_location" type="reference"/>
         <element label="Related Task" max_length="32" name="task" reference="task" type="reference"/>
         <element label="Text" max_length="2000" name="text" type="string"/>
+        <element label="Total Volume (ccm)" max_length="40" name="total_volume" type="integer"/>
         <element label="Total Weight (kg)" max_length="40" name="total_weight" type="integer"/>
         <index name="index">
             <element name="task"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="number" table="x_snc_parcel_parcel">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="total_volume" table="x_snc_parcel_parcel">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
@@ -14,10 +14,10 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Number</column_label>
+        <column_label>Total Volume (ccm)</column_label>
         <comments/>
         <create_roles/>
-        <default_value>javascript:getNextObjNumberPadded();</default_value>
+        <default_value/>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -25,20 +25,20 @@
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
-        <dynamic_default_value display_value="Get Next Padded Number">fdcb83a85f220100a9ad2572f2b4773c</dynamic_default_value>
+        <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>number</element>
+        <element>total_volume</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Integer">integer</internal_type>
         <mandatory>false</mandatory>
-        <max_length>20</max_length>
+        <max_length>40</max_length>
         <name>x_snc_parcel_parcel</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>true</read_only>
+        <read_only>false</read_only>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -52,21 +52,21 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-03-15 18:29:05</sys_created_on>
-        <sys_id>d7cd7fb4dbd2cd10b652edb3059619c6</sys_id>
+        <sys_created_on>2022-04-09 16:24:25</sys_created_on>
+        <sys_id>07019401dbfa0110b652edb3059619be</sys_id>
         <sys_mod_count>3</sys_mod_count>
-        <sys_name>Number</sys_name>
+        <sys_name>Total Volume (ccm)</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
-        <sys_update_name>sys_dictionary_x_snc_parcel_parcel_number</sys_update_name>
+        <sys_update_name>sys_dictionary_x_snc_parcel_parcel_total_volume</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-09 16:44:06</sys_updated_on>
+        <sys_updated_on>2022-04-09 16:30:35</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>true</use_dynamic_default>
+        <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
         <widget/>

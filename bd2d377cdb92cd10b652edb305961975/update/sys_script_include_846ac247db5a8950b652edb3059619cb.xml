@@ -15,6 +15,8 @@
 	var StringReplace = x_snc_devtools.StringReplace;
 	var GetArrayValue = x_snc_devtools.GetArrayValue;
 	var HtmlRenderQRCode = x_snc_devtools.HtmlRenderQRCode;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+
 	
 	var strHtml = '';
 	
@@ -28,7 +30,11 @@
 	var strUrl = GetParcelScanPageURL(grParcel.sys_id);
 	
 	// PARCEL NUMBER
-	strHtml += '<div style="font-size: 200%;"><b>' + grParcel.number + '</b></div>';
+	strHtml += '<div style="font-size: 200%;"><b>' + grParcel.number + '</b>';
+	
+	var nParts = GetIntegerValue();
+	
+	strHtml += '</div>';
 
 	// TEXT
 	var strText = GetStringValue(grParcel.text);
@@ -39,8 +45,50 @@
 		strHtml += '</div>';
 	}	
 
+	strHtml += '<table><tbody><tr><td>';
+	
 	// QR CODE
 	strHtml += HtmlRenderQRCode(strUrl,9,'cm');
+	
+	strHtml += '</td><td style="vertical-align: top;">';
+	
+	// PARTS / WEIGHT / VOLUME
+	strHtml += '<div style="font-size: 120%; line-height: 100%; padding-left: 1cm; padding-top: 0.5cm; vertical-align: top;">';
+	
+	var nParts = GetIntegerValue(grParcel.parts);
+	if (nParts == 0)
+	{
+		nParts = 1;
+	}
+	strHtml += '<b>NO. PARTS</b><br/>' + nParts + '<br/><br/>';
+	
+	var nTotalWeight = GetIntegerValue(grParcel.total_weight);
+	strHtml += '<b>TOTAL WEIGHT</b><br/>';
+	if (nTotalWeight > 0)
+	{
+		strHtml += nTotalWeight + ' kg';
+	}
+	else
+	{
+		strHtml += 'not specified';
+	}
+	strHtml += '<br/><br/>';
+
+	var nTotalVolume = GetIntegerValue(grParcel.total_volume);
+	strHtml += '<b>TOTAL VOLUME</b><br/>';
+	if (nTotalVolume > 0)
+	{
+		strHtml += nTotalVolume + ' ccm';
+	}
+	else
+	{
+		strHtml += 'not specified';
+	}
+	
+	strHtml += '</div>';
+	strHtml += '</td></tr></tbody></table>';
+	
+	
 	
 	// SHIP TO
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
@@ -109,13 +157,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-22 09:53:20</sys_created_on>
         <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
-        <sys_mod_count>88</sys_mod_count>
+        <sys_mod_count>96</sys_mod_count>
         <sys_name>HtmlRenderParcelLabelA4</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-01 06:58:50</sys_updated_on>
+        <sys_updated_on>2022-04-09 16:44:55</sys_updated_on>
     </sys_script_include>
 </record_update>
