@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Parcel Part" max_length="40" name="x_snc_parcel_part" type="collection">
+        <element label="Height (cm)" max_length="40" name="height" type="integer"/>
+        <element label="Length (cm)" max_length="40" name="length" type="integer"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Parcel" mandatory="true" max_length="32" name="parcel" read_only="true" reference="x_snc_parcel_parcel" type="reference"/>
+        <element label="Volume (ccm)" max_length="40" name="volume" read_only="true" type="integer"/>
+        <element label="Weight (kg)" max_length="40" name="weight" type="integer"/>
+        <element label="Width (cm)" max_length="40" name="width" type="integer"/>
+        <index name="index">
+            <element name="parcel"/>
+        </index>
+    </element>
+</database>

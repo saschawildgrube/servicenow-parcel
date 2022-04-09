@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_parcel.CalculateParcel</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CalculateParcel</name>
+        <script><![CDATA[function CalculateParcel(strSysId)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	var GlideRecordUpdate = x_snc_devtools.GlideRecordUpdate;
+	
+	var grParcel = GetParcelRecord(strSysId);
+	if (IsValidRecord(grParcel) == false)
+	{
+		return false;
+	}
+
+	var nTotalWeight = 0;
+	var nParts = 0;
+	
+	var grParts = new GlideRecord('x_snc_parcel_part');
+	grParts.addQuery('parcel','=',grParcel.sys_id);
+	grParts.query();
+	
+	while(grParts.next())
+	{
+		nTotalWeight += GetIntegerValue(grParts.weight);
+		nParts++;
+	}
+	
+	grParcel.parts = nParts;
+	if (nParts > 0)
+	{
+		grParcel.total_weight = nTotalWeight;
+	}
+	
+	GlideRecordUpdate(grParcel,true);
+	
+	CreateParcelLabel(grParcel.sys_id);
+	
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-09 13:19:09</sys_created_on>
+        <sys_id>e626af70dbb60110b652edb305961951</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>CalculateParcel</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_script_include_e626af70dbb60110b652edb305961951</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-09 15:34:58</sys_updated_on>
+    </sys_script_include>
+</record_update>
