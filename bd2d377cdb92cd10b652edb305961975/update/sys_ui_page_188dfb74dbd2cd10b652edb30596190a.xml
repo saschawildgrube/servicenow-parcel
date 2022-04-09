@@ -16,8 +16,12 @@
 	
 	<p>Welcome to the Parcel app - created and maintained by&#160;<a href="mailto:sascha.wildgrube@servicenow.com">Sascha Wildgrube</a>.</p>
 
+	<p>This app was built to help organizing the shipment of medical supplies to the Ukraine during the war that started in February 2022.</p>
+	<p>It is dedicated to the people of the Ukraine, their resistance and to everyone who invested their time and resources to help.</p> 
+	
 	<h2>Features</h2> 
 	<p>Manage and track parcel shipments.</p>
+	<p>Produce PDF shipping labels.</p>
 
 	<h2>Disclaimer</h2>
 	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
@@ -47,7 +51,7 @@
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsAppInstall();
 		]</g2:no_escape>		
-		<!--<li>TODO: Add further steps required for installation...</li>-->
+		<li>Define a default Parcel Profile</li>
 	</ol>
 
 	<h2>Reference</h2>
@@ -101,13 +105,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 18:27:21</sys_created_on>
         <sys_id>188dfb74dbd2cd10b652edb30596190a</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_page_188dfb74dbd2cd10b652edb30596190a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-18 08:16:27</sys_updated_on>
+        <sys_updated_on>2022-04-09 17:09:18</sys_updated_on>
     </sys_ui_page>
 </record_update>
