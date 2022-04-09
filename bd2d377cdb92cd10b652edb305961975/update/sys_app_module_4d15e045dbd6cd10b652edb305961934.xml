@@ -15,7 +15,7 @@
         <name>x_snc_parcel_event</name>
         <order>10</order>
         <override_menu_roles>false</override_menu_roles>
-        <query/>
+        <query>&amp;sysparm_order=sys_created_on&amp;sysparm_order_direction=desc</query>
         <report/>
         <roles/>
         <sys_class_name>sys_app_module</sys_class_name>
@@ -24,7 +24,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4d15e045dbd6cd10b652edb305961934</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Parcel Events</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -32,7 +32,7 @@
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_app_module_4d15e045dbd6cd10b652edb305961934</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-15 21:21:00</sys_updated_on>
+        <sys_updated_on>2022-04-09 17:22:00</sys_updated_on>
         <timeline_page/>
         <title>Parcel Events</title>
         <uncancelable>false</uncancelable>
