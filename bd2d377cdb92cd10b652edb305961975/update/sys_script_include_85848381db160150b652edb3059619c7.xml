@@ -9,6 +9,11 @@
         <name>HtmlRenderPageParcelScan</name>
         <script><![CDATA[function HtmlRenderPageParcelScan()
 {
+	if (IsActive() == false)
+	{
+		return '';
+	}
+	
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var IsValidSysId = x_snc_devtools.IsValidSysId;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
@@ -135,14 +140,12 @@
 	
 	var strHtml = '';
 	
-	//strHtml += '<h1>PARCEL SCAN</h1>';
 	
 	var strState = '';
 	var strParcel = GetStringValue(RP.getParameterValue('parcel'));
 	var strOption = GetStringValue(RP.getParameterValue('option'));
 
-	//strHtml += '<p>Parcel: '+strParcel+'</p>';
-	
+
 	if (strParcel == '')
 	{
 		strState = 'enternumber';
@@ -189,13 +192,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 08:58:22</sys_created_on>
         <sys_id>85848381db160150b652edb3059619c7</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>HtmlRenderPageParcelScan</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_85848381db160150b652edb3059619c7</sys_update_name>
-        <sys_updated_by>sascha.wildgrube</sys_updated_by>
-        <sys_updated_on>2022-03-28 12:22:40</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-09 16:57:33</sys_updated_on>
     </sys_script_include>
 </record_update>
