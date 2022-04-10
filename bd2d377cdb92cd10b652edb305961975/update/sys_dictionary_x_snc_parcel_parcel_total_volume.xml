@@ -14,7 +14,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Total Volume (ccm)</column_label>
+        <column_label>Total Volume (m³)</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -32,7 +32,7 @@
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Integer">integer</internal_type>
+        <internal_type display_value="">float</internal_type>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
         <name>x_snc_parcel_parcel</name>
@@ -52,16 +52,16 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-04-09 16:24:25</sys_created_on>
-        <sys_id>07019401dbfa0110b652edb3059619be</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Total Volume (ccm)</sys_name>
+        <sys_created_on>2022-04-10 17:16:24</sys_created_on>
+        <sys_id>a686a1d5db36c110b652edb30596194c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Total Volume (m³)</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_parcel_parcel_total_volume</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-09 16:30:35</sys_updated_on>
+        <sys_updated_on>2022-04-10 17:16:33</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Event" max_length="40" name="x_snc_parcel_event" sizeclass="41" type="collection">
+    <element label="Event" max_length="40" name="x_snc_parcel_event" sizeclass="42" type="collection">
         <element label="Agent" max_length="32" name="agent" reference="sys_user" type="reference"/>
         <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
         <element label="Parcel" mandatory="true" max_length="32" name="parcel" read_only="true" reference="x_snc_parcel_parcel" type="reference"/>
