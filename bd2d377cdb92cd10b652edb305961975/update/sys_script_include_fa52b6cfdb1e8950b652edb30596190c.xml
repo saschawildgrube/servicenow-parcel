@@ -22,6 +22,7 @@
 	
 	var grParcel = new GlideRecord('x_snc_parcel_parcel');
 	grParcel.addQuery('task','=',strTaskSysId);
+	grParcel.orderBy('number');
 	grParcel.query();
 	if (grParcel.getRowCount() == 0)
 	{
@@ -71,13 +72,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-22 12:49:28</sys_created_on>
         <sys_id>fa52b6cfdb1e8950b652edb30596190c</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>CreateParcelLabelsFromTask</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_fa52b6cfdb1e8950b652edb30596190c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-30 11:59:13</sys_updated_on>
+        <sys_updated_on>2022-04-12 10:54:25</sys_updated_on>
     </sys_script_include>
 </record_update>
