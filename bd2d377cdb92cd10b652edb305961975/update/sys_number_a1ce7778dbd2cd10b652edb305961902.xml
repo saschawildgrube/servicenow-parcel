@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
     <sys_number action="INSERT_OR_UPDATE">
         <category display_value="" name="x_snc_parcel_parcel">x_snc_parcel_parcel</category>
-        <maximum_digits>0</maximum_digits>
+        <maximum_digits>5</maximum_digits>
         <number>1</number>
         <prefix>PARCEL-</prefix>
         <sys_class_name>sys_number</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 18:32:54</sys_created_on>
         <sys_id>a1ce7778dbd2cd10b652edb305961902</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>PARCEL-</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_number_a1ce7778dbd2cd10b652edb305961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-16 18:26:23</sys_updated_on>
+        <sys_updated_on>2022-04-12 11:06:43</sys_updated_on>
     </sys_number>
 </record_update>
