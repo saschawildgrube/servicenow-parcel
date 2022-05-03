@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Event" max_length="40" name="x_snc_parcel_event" sizeclass="42" type="collection">
         <element label="Agent" max_length="32" name="agent" reference="sys_user" type="reference"/>
+        <element label="Latitude" max_length="40" name="latitude" read_only="true" type="float"/>
         <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
+        <element label="Longitude" max_length="40" name="longitude" read_only="true" type="float"/>
         <element label="Parcel" mandatory="true" max_length="32" name="parcel" read_only="true" reference="x_snc_parcel_parcel" type="reference"/>
         <element label="Payload" max_length="200" name="payload" type="string"/>
         <index name="index">

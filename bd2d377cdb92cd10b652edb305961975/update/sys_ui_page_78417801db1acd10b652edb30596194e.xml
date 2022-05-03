@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
     <sys_ui_page action="INSERT_OR_UPDATE">
         <category>general</category>
-        <client_script/>
+        <client_script><![CDATA[if (navigator && navigator.geolocation)
+{
+	var strUrl = GetStringValue(top.window.location);
+	var url = ParseUrl(strUrl); 
+	var params = ParseUrlParameters(GetValue(url,'parameters'));
+
+	if (GetStringValue(GetValue(params,'long')) == '' && GetStringValue(GetValue(params,'option')) == '')
+	{
+		function errorCallback()
+		{
+		}
+
+		function successCallback(position)
+		{
+			var strUrl = '/x_snc_parcel_scan.do?';
+			strUrl += 'parcel='+GetValue(params,'parcel');
+			strUrl += '&option='+GetValue(params,'option');
+			strUrl += '&lat=' + position.coords.latitude;
+			strUrl += '&long=' + position.coords.longitude;
+			top.window.location = strUrl;
+		}
+		navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+	}
+}
+]]></client_script>
         <description/>
         <direct>false</direct>
         <endpoint>x_snc_parcel_scan.do</endpoint>
         <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
-
 	
 	<g2:no_escape>$[
 		HtmlRenderPageParcelScan();
@@ -20,13 +43,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 22:14:14</sys_created_on>
         <sys_id>78417801db1acd10b652edb30596194e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>scan</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_page_78417801db1acd10b652edb30596194e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-16 13:06:25</sys_updated_on>
+        <sys_updated_on>2022-05-03 18:14:10</sys_updated_on>
     </sys_ui_page>
 </record_update>
