@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_snc_parcel_manual.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div style="padding-left: 20px;">
+<span style="visibility: hidden;">_CUT_HERE_</span>
+	<g2:no_escape>$[
+		var docapi = new x_snc_devtools.DocumentationAPI('bd2d377cdb92cd10b652edb305961975');
+		docapi.RenderHeader();
+	]</g2:no_escape>
+	
+	<p>Welcome to the Parcel app - created and maintained by&#160;<a href="mailto:sascha.wildgrube@servicenow.com">Sascha Wildgrube</a>.</p>
+
+	<p>This app was built to help organizing the shipment of medical supplies to the Ukraine during the war that started in February 2022.</p>
+	<p>It is dedicated to the people of the Ukraine, their resistance and to everyone who invested their time and resources to help.</p> 
+	
+	<h2>Features</h2> 
+	<p>Manage and track parcel shipments.</p>
+	<p>Produce PDF shipping labels.</p>
+
+	<h2>Disclaimer</h2>
+	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
+	
+	<h2>System Requirements</h2>
+	<ul>
+		<g2:no_escape>$[
+			docapi.RenderSystemRequirements(
+				'Rome,San Diego',
+				true,
+				AppGetDependencies());
+		]</g2:no_escape>	
+	</ul>
+	
+	<h2>Installation</h2>
+	<ol>
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'DevTools',
+				'https://github.com/saschawildgrube/servicenow-devtools');
+		]</g2:no_escape>
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'Parcel',
+				'https://github.com/saschawildgrube/servicenow-parcel');
+		]</g2:no_escape>		
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsAppInstall();
+		]</g2:no_escape>		
+		<li>Define a default parcel profile.</li>
+		<li>Configure event options for the default parcel profile.</li>
+	</ol>
+
+	<h2>Reference</h2>
+
+	<h2>Roles</h2>
+	<g2:no_escape>$[docapi.RenderRoles()]</g2:no_escape>		
+	
+	<h3>Configuration Options</h3>
+	<g2:no_escape>$[docapi.RenderProperties()]</g2:no_escape>
+
+	<h3>UI Actions</h3>
+	<g2:no_escape>$[docapi.RenderUIActions()]</g2:no_escape>		
+	
+	<h3>Script Includes</h3>
+	<g2:no_escape>$[docapi.RenderScriptIncludes()]</g2:no_escape>
+
+	<!--
+	<h3>UI Scripts</h3>
+	<g2:no_escape>$[docapi.RenderUIScripts()]</g2:no_escape>	
+	
+	<h3>Test step configurations</h3>
+	<g2:no_escape>$[docapi.RenderTestStepConfigurations()]</g2:no_escape>
+	
+	<h3>Extension Points</h3>
+	<g2:no_escape>$[docapi.RenderExtensionPoints()]</g2:no_escape>		
+
+	<h3>Business Rules</h3>
+	<g2:no_escape>$[docapi.RenderBusinessRules()]</g2:no_escape>	
+	-->
+	
+	<h2>License</h2>
+	<g2:no_escape>$[docapi.RenderCopyright(2022,'Sascha Wildgrube')]</g2:no_escape>
+	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
+	
+	<h2>Release Notes</h2>
+<!--
+	<h3>1.1.0 - 2022-TODO</h3>
+	<ol>
+		<li>TODO: document changes here</li>
+	</ol>
+-->
+	<h3>1.0.0 - 2022-TODO</h3>
+	<p>First baselined version</p>
+
+<span style="visibility: hidden;">_CUT_HERE_</span>
+</div>
+</j:jelly>]]></html>
+        <name>manual</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 18:27:21</sys_created_on>
+        <sys_id>188dfb74dbd2cd10b652edb30596190a</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>manual</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_ui_page_188dfb74dbd2cd10b652edb30596190a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-05 09:24:57</sys_updated_on>
+    </sys_ui_page>
+</record_update>

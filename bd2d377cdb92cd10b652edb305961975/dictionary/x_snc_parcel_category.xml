@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Parcel Category" max_length="40" name="x_snc_parcel_category" sizeclass="4" type="collection">
+        <element label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+    </element>
+</database>

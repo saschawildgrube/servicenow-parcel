@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_snc_parcel.event_option_user</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>event_option_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 08:30:10</sys_created_on>
+        <sys_id>c66e3ec9dbd20150b652edb30596190a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_parcel.event_option_user</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_user_role_c66e3ec9dbd20150b652edb30596190a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 08:30:10</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</application>
+        <file_path/>
+        <instance_id>f492329ddb5849108aea21c405961946</instance_id>
+        <instance_name>wildgrubedevquebec</instance_name>
+        <name>sys_user_role_c66e3ec9dbd20150b652edb30596190a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>x_snc_parcel.event_option_user</name><requires_subscription>-1</requires_subscription><scoped_admin>false</scoped_admin><suffix>event_option_user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-16 08:30:10</sys_created_on><sys_id>c66e3ec9dbd20150b652edb30596190a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_parcel.event_option_user</sys_name><sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package><sys_policy/><sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope><sys_update_name>sys_user_role_c66e3ec9dbd20150b652edb30596190a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-03-16 08:30:10</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>-494652137</payload_hash>
+        <record_name>x_snc_parcel.event_option_user</record_name>
+        <reverted_from/>
+        <source>bf82cc0ddbd2cd10b652edb305961935</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 08:30:10</sys_created_on>
+        <sys_id>8e6ebec9dbd20150b652edb305961925</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f91d949670000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 08:30:10</sys_updated_on>
+        <type>Role</type>
+        <update_guid>c66ebec9ded2015059d73c8fe67e0825</update_guid>
+        <update_guid_history>c66ebec9ded2015059d73c8fe67e0825:-494652137</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_snc_parcel.event_option_user">5cbe7e0ddbd20150b652edb305961905</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 08:31:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>604bfc9c6fff4aa4b39ec8a6b2ec0484</sys_id>
+        <sys_metadata>c66e3ec9dbd20150b652edb30596190a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_parcel.event_option_user</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_scope_delete display_value="">5be45ded9026453eb1983a2ba61118e4</sys_scope_delete>
+        <sys_update_name>sys_user_role_c66e3ec9dbd20150b652edb30596190a</sys_update_name>
+        <sys_update_version display_value="sys_user_role_c66e3ec9dbd20150b652edb30596190a">8e6ebec9dbd20150b652edb305961925</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 08:31:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

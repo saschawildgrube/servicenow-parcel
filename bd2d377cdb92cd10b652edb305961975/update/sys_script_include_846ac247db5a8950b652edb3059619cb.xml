@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_parcel.HtmlRenderParcelLabelA4</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>HtmlRenderParcelLabelA4</name>
+        <script><![CDATA[function HtmlRenderParcelLabelA4(grParcel)
+{
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetRecord = x_snc_devtools.GetRecord;
+	var StringReplace = x_snc_devtools.StringReplace;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var HtmlRenderQRCode = x_snc_devtools.HtmlRenderQRCode;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+
+	
+	var strHtml = '';
+	
+	if (IsValidRecord(grParcel) == false)
+	{
+		strHtml += '<p style="text-color: red;">ERROR!</p>';
+		strHtml = HtmlRenderPageA4(strHtml);
+		return strHtml;
+	}
+	
+	var strUrl = GetParcelScanPageURL(grParcel.sys_id);
+	
+	// PARCEL NUMBER
+	strHtml += '<div style="font-size: 200%;"><b>' + grParcel.number + '</b>';
+	
+	var nParts = GetIntegerValue();
+	
+	strHtml += '</div>';
+
+	// TEXT
+	var strText = GetStringValue(grParcel.text);
+	if (strText != '')
+	{
+		strHtml += '<div style="font-size: 180%; line-height: 100%;">';
+		strHtml += StringReplace(strText,'\n','<br/>')+' ';
+		strHtml += '</div>';
+	}	
+
+	strHtml += '<table><tbody><tr><td>';
+	
+	// QR CODE
+	strHtml += HtmlRenderQRCode(strUrl,9,'cm');
+	
+	strHtml += '</td><td style="vertical-align: top;">';
+	
+	// PARTS / WEIGHT / VOLUME
+	strHtml += '<div style="font-size: 120%; line-height: 100%; padding-left: 1cm; padding-top: 0.5cm; vertical-align: top;">';
+	
+	var nParts = GetIntegerValue(grParcel.parts);
+	if (nParts == 0)
+	{
+		nParts = 1;
+	}
+	strHtml += '<b>NO. PARTS</b><br/>' + nParts + '<br/><br/>';
+	
+	var nTotalWeight = GetIntegerValue(grParcel.total_weight);
+	strHtml += '<b>TOTAL WEIGHT</b><br/>';
+	if (nTotalWeight > 0)
+	{
+		strHtml += nTotalWeight + ' kg';
+	}
+	else
+	{
+		strHtml += 'not specified';
+	}
+	strHtml += '<br/><br/>';
+
+	var nTotalVolume = GetFloatValue(grParcel.total_volume);
+	strHtml += '<b>TOTAL VOLUME</b><br/>';
+	if (nTotalVolume > 0)
+	{
+		strHtml += nTotalVolume + ' m³';
+	}
+	else
+	{
+		strHtml += 'not specified';
+	}
+	
+	strHtml += '</div>';
+	strHtml += '</td></tr></tbody></table>';
+	
+	
+	
+	// SHIP TO
+	var grLocation = GetRecord('cmn_location',grParcel.destination);
+	if (IsValidRecord(grLocation))
+	{
+		strHtml += '<div style="font-size: 200%;"><b>SHIP TO</b></div>'
+		strHtml += '<div style="font-size: 200%; line-height: 130%;">';
+			strHtml += '<div>'+grLocation.name+'</div>';
+			strHtml += '<div>'+StringReplace(grLocation.street,'\n','<br/>')+'</div>';
+			strHtml += '<div>'+grLocation.zip+' '+grLocation.city+'</div>';
+			strHtml += '<div>'+grLocation.state+' '+grLocation.country+'</div>';
+		strHtml += '</div>';
+	}
+
+	// SHIP FROM
+	var grLocationSender = GetRecord('cmn_location',grParcel.sender);
+	if (IsValidRecord(grLocationSender))
+	{
+		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 5px;">';
+		strHtml += '<b>SHIP FROM</b> ';
+		strHtml += grLocationSender.name+' ';
+		strHtml += grLocationSender.street+' ';
+		strHtml += grLocationSender.zip+' '+grLocationSender.city+' '+grLocationSender.state+' ';
+		strHtml += grLocationSender.country;		
+		strHtml += '</div>';
+	}	
+
+	// CONTACTS
+	var aContacts = GetArrayValue(grParcel.contacts);
+	if (aContacts.length > 0)
+	{
+		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 5px;">';
+		strHtml += '<b>CONTACTS</b><br/>';		
+		for (var nContact = 0; nContact < aContacts.length; nContact++)
+		{
+			var grUser = GetRecord('sys_user',aContacts[nContact]);
+			if (IsValidRecord(grUser) == true)
+			{
+				var strFunction = GetStringValue(grUser.x_snc_parcel_function);
+				if (strFunction != '')
+				{
+					strFunction = ' ('+strFunction+')';
+				}
+				strHtml += '' + grUser.name + ' ' + grUser.mobile_phone + strFunction + '<br/>';
+			}
+		}
+		strHtml += '</div>';
+	}	
+	
+	// TASK/CASE
+	var grTask = GetRecord('task',grParcel.task);
+	if (IsValidRecord(grTask))
+	{
+		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 3px;">';
+		strHtml += '<b>TASK/CASE</b> ';
+		strHtml += grTask.number+' ';
+		strHtml += '</div>';
+	}
+
+	// 
+	strHtml = x_snc_devtools.HtmlRenderPageA4(strHtml,1,1);
+	
+	return strHtml;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-22 09:53:20</sys_created_on>
+        <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
+        <sys_mod_count>98</sys_mod_count>
+        <sys_name>HtmlRenderParcelLabelA4</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-12 11:16:45</sys_updated_on>
+    </sys_script_include>
+</record_update>

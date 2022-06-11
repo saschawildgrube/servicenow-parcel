@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="Parcel">588dfb74dbd2cd10b652edb305961924</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Parcel Types</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_snc_parcel_type</name>
+        <order>6</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_snc_airline.viewer</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-30 15:54:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>135a68b9dbaec910b652edb3059619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Parcel Types</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_app_module_135a68b9dbaec910b652edb3059619c7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-30 15:54:59</sys_updated_on>
+        <timeline_page/>
+        <title>Parcel Types</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</application>
+        <file_path/>
+        <instance_id>f492329ddb5849108aea21c405961946</instance_id>
+        <instance_name>wildgrubedevquebec</instance_name>
+        <name>sys_app_module_135a68b9dbaec910b652edb3059619c7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Parcel">588dfb74dbd2cd10b652edb305961924</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>Parcel Types</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_snc_parcel_type</name><order>6</order><override_menu_roles>false</override_menu_roles><query/><report/><roles>x_snc_airline.viewer</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-30 15:54:59</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>135a68b9dbaec910b652edb3059619c7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Parcel Types</sys_name><sys_overrides/><sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package><sys_policy/><sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope><sys_update_name>sys_app_module_135a68b9dbaec910b652edb3059619c7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-03-30 15:54:59</sys_updated_on><timeline_page/><title>Parcel Types</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-684035976</payload_hash>
+        <record_name>Parcel Types</record_name>
+        <reverted_from/>
+        <source>c3a559d9db124150b652edb3059619aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-30 15:54:59</sys_created_on>
+        <sys_id>667a68b9dbaec910b652edb3059619fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17fdb898e330000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-30 15:54:59</sys_updated_on>
+        <type>Module</type>
+        <update_guid>ae7a68b9eaaec91001afc8eca16f2efb</update_guid>
+        <update_guid_history>ae7a68b9eaaec91001afc8eca16f2efb:-684035976</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Parcel Types">998b2cbddbaec910b652edb3059619d3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-30 15:59:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>b608a4899c284b159b4c31e027aacf19</sys_id>
+        <sys_metadata>135a68b9dbaec910b652edb3059619c7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Parcel Types</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_scope_delete display_value="">5be45ded9026453eb1983a2ba61118e4</sys_scope_delete>
+        <sys_update_name>sys_app_module_135a68b9dbaec910b652edb3059619c7</sys_update_name>
+        <sys_update_version display_value="sys_app_module_135a68b9dbaec910b652edb3059619c7">667a68b9dbaec910b652edb3059619fc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-30 15:59:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
