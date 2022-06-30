@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="task" label="Zugehöriger Case" language="de" table="x_snc_parcel_parcel">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>task</element>
+            <help/>
+            <hint/>
+            <label>Zugehöriger Case</label>
+            <language>de</language>
+            <name>x_snc_parcel_parcel</name>
+            <plural>Zugehöriger Cases</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>hendrik.odendaal</sys_created_by>
+            <sys_created_on>2022-06-30 17:30:34</sys_created_on>
+            <sys_id>2392ba9f1b985910c069657bab4bcbb3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Zugehöriger Case</sys_name>
+            <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_parcel_parcel_task_de</sys_update_name>
+            <sys_updated_by>hendrik.odendaal</sys_updated_by>
+            <sys_updated_on>2022-06-30 17:30:34</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
