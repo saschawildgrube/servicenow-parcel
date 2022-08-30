@@ -19,6 +19,11 @@
 	var GetFloatValue = x_snc_devtools.GetFloatValue;
 
 	
+	function HtmlRenderSeparator()
+	{
+		return '<div style=" margin-top: 10px; border-top: solid; border-width: thick; padding-top: 5px;"/>';
+	}
+	
 	var strHtml = '';
 	
 	if (IsValidRecord(grParcel) == false)
@@ -41,11 +46,13 @@
 	var strText = GetStringValue(grParcel.text);
 	if (strText != '')
 	{
+		strHtml += HtmlRenderSeparator();
 		strHtml += '<div style="font-size: 180%; line-height: 100%;">';
 		strHtml += StringReplace(strText,'\n','<br/>')+' ';
 		strHtml += '</div>';
 	}	
 
+	strHtml += HtmlRenderSeparator();
 	strHtml += '<table><tbody><tr><td>';
 	
 	// QR CODE
@@ -95,6 +102,7 @@
 	var grLocation = GetRecord('cmn_location',grParcel.destination);
 	if (IsValidRecord(grLocation))
 	{
+		strHtml += HtmlRenderSeparator();
 		strHtml += '<div style="font-size: 200%;"><b>SHIP TO</b></div>'
 		strHtml += '<div style="font-size: 200%; line-height: 130%;">';
 			strHtml += '<div>'+grLocation.name+'</div>';
@@ -108,7 +116,8 @@
 	var grLocationSender = GetRecord('cmn_location',grParcel.sender);
 	if (IsValidRecord(grLocationSender))
 	{
-		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 5px;">';
+		strHtml += HtmlRenderSeparator();
+		strHtml += '<div style="font-size: 100%;">';
 		strHtml += '<b>SHIP FROM</b> ';
 		strHtml += grLocationSender.name+' ';
 		strHtml += grLocationSender.street+' ';
@@ -121,7 +130,8 @@
 	var aContacts = GetArrayValue(grParcel.contacts);
 	if (aContacts.length > 0)
 	{
-		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 5px;">';
+		strHtml += HtmlRenderSeparator();
+		strHtml += '<div style="font-size: 150%;">';
 		strHtml += '<b>CONTACTS</b><br/>';		
 		for (var nContact = 0; nContact < aContacts.length; nContact++)
 		{
@@ -143,13 +153,13 @@
 	var grTask = GetRecord('task',grParcel.task);
 	if (IsValidRecord(grTask))
 	{
-		strHtml += '<div style="font-size: 100%; margin-top: 10px; border-top: solid; border-width: thick; padding-top: 3px;">';
+		strHtml += HtmlRenderSeparator();
+		strHtml += '<div style="font-size: 100%;">';
 		strHtml += '<b>TASK/CASE</b> ';
 		strHtml += grTask.number+' ';
 		strHtml += '</div>';
 	}
 
-	// 
 	strHtml = x_snc_devtools.HtmlRenderPageA4(strHtml,1,1);
 	
 	return strHtml;
@@ -158,13 +168,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-22 09:53:20</sys_created_on>
         <sys_id>846ac247db5a8950b652edb3059619cb</sys_id>
-        <sys_mod_count>98</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>HtmlRenderParcelLabelA4</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_846ac247db5a8950b652edb3059619cb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-12 11:16:45</sys_updated_on>
+        <sys_updated_on>2022-08-30 08:23:45</sys_updated_on>
     </sys_script_include>
 </record_update>
