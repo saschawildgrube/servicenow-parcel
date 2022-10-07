@@ -6,7 +6,7 @@
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
-        <comments/>
+        <comments>Save this parcel part and copy its values into a new part.</comments>
         <condition/>
         <form_action>true</form_action>
         <form_button>true</form_button>
@@ -61,7 +61,7 @@ RedirectToRecord(grPart);]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7c30fa8edb8f0110b652edb30596194a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Save and Copy</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -69,7 +69,7 @@ RedirectToRecord(grPart);]]></script>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_action_7c30fa8edb8f0110b652edb30596194a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-25 16:50:49</sys_updated_on>
+        <sys_updated_on>2022-10-07 14:16:54</sys_updated_on>
         <table>x_snc_parcel_part</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
