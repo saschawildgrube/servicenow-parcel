@@ -15,6 +15,7 @@
         <form_link>true</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
         <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint/>
         <isolate_script>true</isolate_script>
         <list_action>false</list_action>
@@ -27,9 +28,9 @@
         <list_style/>
         <messages/>
         <name>Scan Parcel</name>
-        <onclick>ScanParcel()</onclick>
+        <onclick>onClickScanParcel()</onclick>
         <order>100</order>
-        <script><![CDATA[function ScanParcel()
+        <script><![CDATA[function onClickScanParcel()
 {
 	var strUrl = '/x_snc_parcel_scan.do?parcel='+g_form.getValue('number');
 	top.window.open(strUrl, '_blank');
@@ -44,7 +45,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2e1bf561db1a8150b652edb30596191e</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Scan Parcel</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -52,7 +53,7 @@
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_action_2e1bf561db1a8150b652edb30596191e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-30 18:30:15</sys_updated_on>
+        <sys_updated_on>2023-04-22 10:29:02</sys_updated_on>
         <table>x_snc_parcel_parcel</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
