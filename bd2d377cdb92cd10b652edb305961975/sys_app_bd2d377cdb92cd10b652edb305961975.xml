@@ -14,7 +14,7 @@
         <license_model>none</license_model>
         <logo/>
         <menu/>
-        <name>Parcel WORK IN PROGRESS</name>
+        <name>Parcel</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
@@ -46,4 +46,5 @@
         <x_snc_wildgrubelab_test/>
         <x_snc_wildgrubelab_test2/>
     </sys_app>
+    <sys_translated_text action="delete_multiple" query="documentkey=bd2d377cdb92cd10b652edb305961975"/>
 </record_update>
