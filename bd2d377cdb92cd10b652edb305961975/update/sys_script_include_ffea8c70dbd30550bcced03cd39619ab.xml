@@ -5,7 +5,7 @@
         <api_name>x_snc_parcel.CreateParcelEventByPosition</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description/>
+        <description>Creates a parcel event based on the given parcel Sys Id indicating the given geolocation of the device by which the parcel was scanned.</description>
         <name>CreateParcelEventByPosition</name>
         <script><![CDATA[function CreateParcelEventByPosition(strParcelSysId,fLat,fLong)
 {
@@ -34,13 +34,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-05-03 17:50:21</sys_created_on>
         <sys_id>ffea8c70dbd30550bcced03cd39619ab</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>CreateParcelEventByPosition</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_ffea8c70dbd30550bcced03cd39619ab</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-03 18:06:35</sys_updated_on>
+        <sys_updated_on>2023-08-19 21:31:31</sys_updated_on>
     </sys_script_include>
 </record_update>
