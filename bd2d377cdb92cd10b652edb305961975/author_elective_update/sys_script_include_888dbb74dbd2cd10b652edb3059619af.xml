@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_parcel.Log</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description>Produces a log output in the application log.</description>
+        <name>Log</name>
+        <script><![CDATA[function Log(strText)
+{
+	if (AppGetProperty('log.active'))
+	{
+		x_snc_devtools.Log('Parcel: '+gs.getUserName()+': '+strText);
+	}
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 18:27:20</sys_created_on>
+        <sys_id>888dbb74dbd2cd10b652edb3059619af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Log</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_script_include_888dbb74dbd2cd10b652edb3059619af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 18:27:20</sys_updated_on>
+    </sys_script_include>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</application>
+        <file_path/>
+        <instance_id>84975bb2db8d919c4d2bac44d4961989</instance_id>
+        <instance_name>wildgrubetokyo</instance_name>
+        <name>sys_script_include_888dbb74dbd2cd10b652edb3059619af</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;
+    &lt;sys_script_include action="INSERT_OR_UPDATE"&gt;
+        &lt;access&gt;public&lt;/access&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;api_name&gt;x_snc_parcel.Log&lt;/api_name&gt;
+        &lt;caller_access&gt;1&lt;/caller_access&gt;
+        &lt;client_callable&gt;false&lt;/client_callable&gt;
+        &lt;description&gt;Produces a log output in the application log.&lt;/description&gt;
+        &lt;name&gt;Log&lt;/name&gt;
+        &lt;script&gt;&lt;![CDATA[function Log(strText)
+{
+	if (AppGetProperty('log.active'))
+	{
+		x_snc_devtools.Log('Parcel: '+gs.getUserName()+': '+strText);
+	}
+}]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2022-03-15 18:27:20&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;888dbb74dbd2cd10b652edb3059619af&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Log&lt;/sys_name&gt;
+        &lt;sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel"&gt;bd2d377cdb92cd10b652edb305961975&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Parcel WORK IN PROGRESS"&gt;bd2d377cdb92cd10b652edb305961975&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_include_888dbb74dbd2cd10b652edb3059619af&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2022-03-15 18:27:20&lt;/sys_updated_on&gt;
+    &lt;/sys_script_include&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-757546808</payload_hash>
+        <record_name>Log</record_name>
+        <reverted_from/>
+        <source>c6c13db39731e550a6a07767f053af9a</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-01 11:49:50</sys_created_on>
+        <sys_id>e9d1b1f39731e550a6a07767f053af56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1873ca701000000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-01 11:49:50</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>a9d1b1f35731e550ffd4397891d7d556</update_guid>
+        <update_guid_history>a9d1b1f35731e550ffd4397891d7d556:-757546808</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-19 20:55:59</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>c6d542ea291c4ae69d8ef4dc62eb3bf9</sys_id>
+        <sys_metadata>888dbb74dbd2cd10b652edb3059619af</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Log</sys_name>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_scope_delete display_value="">5be45ded9026453eb1983a2ba61118e4</sys_scope_delete>
+        <sys_update_name>sys_script_include_888dbb74dbd2cd10b652edb3059619af</sys_update_name>
+        <sys_update_version display_value="sys_script_include_888dbb74dbd2cd10b652edb3059619af">e9d1b1f39731e550a6a07767f053af56</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-19 20:55:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
