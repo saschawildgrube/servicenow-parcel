@@ -4,8 +4,8 @@
         <application display_value="Parcel">588dfb74dbd2cd10b652edb305961924</application>
         <assessment/>
         <device_type/>
-        <filter table="syslog_app_scope">sys_created_onONLast 30 minutes@javascript:gs.beginningOfLast30Minutes()@javascript:gs.endOfLast30Minutes()^messageLIKEParcel^EQ<item endquery="false" field="sys_created_on" goto="false" newquery="false" operator="ON" or="false" value="Last 30 minutes@javascript:gs.beginningOfLast30Minutes()@javascript:gs.endOfLast30Minutes()"/>
-            <item endquery="false" field="message" goto="false" newquery="false" operator="LIKE" or="false" value="Parcel"/>
+        <filter table="syslog_app_scope">sys_created_onONLast 30 minutes@javascript:gs.beginningOfLast30Minutes()@javascript:gs.endOfLast30Minutes()^sys_scope=bd2d377cdb92cd10b652edb305961975^EQ<item endquery="false" field="sys_created_on" goto="false" newquery="false" operator="ON" or="false" value="Last 30 minutes@javascript:gs.beginningOfLast30Minutes()@javascript:gs.endOfLast30Minutes()"/>
+            <item display_table="sys_scope" display_value="Parcel WORK IN PROGRESS" endquery="false" field="sys_scope" goto="false" newquery="false" operator="=" or="false" value="bd2d377cdb92cd10b652edb305961975"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter>
         <hint/>
@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>208dfb74dbd2cd10b652edb305961933</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Log</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_app_module_208dfb74dbd2cd10b652edb305961933</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-19 12:11:25</sys_updated_on>
+        <sys_updated_on>2023-08-19 21:33:32</sys_updated_on>
         <timeline_page/>
         <title>Log</title>
         <uncancelable>false</uncancelable>

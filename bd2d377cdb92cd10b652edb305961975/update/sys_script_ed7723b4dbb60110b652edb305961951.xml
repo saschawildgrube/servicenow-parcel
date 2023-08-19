@@ -13,7 +13,7 @@
         <client_callable>false</client_callable>
         <collection>x_snc_parcel_part</collection>
         <condition/>
-        <description/>
+        <description>Updates the total weight and volume based on the parcel parts and updates the label.</description>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
@@ -38,7 +38,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ed7723b4dbb60110b652edb305961951</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Parcel Part - Calculate Parcel</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -46,7 +46,7 @@
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_ed7723b4dbb60110b652edb305961951</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-09 15:28:08</sys_updated_on>
+        <sys_updated_on>2023-08-19 21:27:52</sys_updated_on>
         <template/>
         <when>after</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
