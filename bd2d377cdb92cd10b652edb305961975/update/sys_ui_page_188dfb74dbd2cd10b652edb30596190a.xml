@@ -10,7 +10,7 @@
 <div style="padding-left: 20px;">
 <span style="visibility: hidden;">_CUT_HERE_</span>
 	<g2:no_escape>$[
-		var docapi = new x_snc_devtools.DocumentationAPI('bd2d377cdb92cd10b652edb305961975');
+		var docapi = new x_snc_devtools.DocumentationAPI('x_snc_parcel');
 		docapi.RenderHeader();
 	]</g2:no_escape>
 	
@@ -96,7 +96,7 @@
 	</ol>
 -->
 	
-	<h3>1.2.0 - 2023-TODO</h3>
+	<h3>1.2.0 - 2023-11-13</h3>
 	<ol>
 		<li>The parcel categories are now printed on the parcel label.</li> 
 		<li>UI Action "Create Parcel Labels (PDF)" is no longer available for closed tasks.</li>
@@ -127,13 +127,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 18:27:21</sys_created_on>
         <sys_id>188dfb74dbd2cd10b652edb30596190a</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_page_188dfb74dbd2cd10b652edb30596190a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-13 09:36:12</sys_updated_on>
+        <sys_updated_on>2023-11-13 10:02:05</sys_updated_on>
     </sys_ui_page>
 </record_update>
