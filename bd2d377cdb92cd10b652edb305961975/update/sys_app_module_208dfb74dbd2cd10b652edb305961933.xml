@@ -16,7 +16,7 @@
         <mobile_title>Log</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>syslog_app_scope</name>
-        <order>120</order>
+        <order>1120</order>
         <override_menu_roles>false</override_menu_roles>
         <query>&amp;sysparm_view_forced=true&amp;sysparm_order=sequence&amp;sysparm_order_direction=desc</query>
         <report/>
@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>208dfb74dbd2cd10b652edb305961933</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Log</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_app_module_208dfb74dbd2cd10b652edb305961933</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-19 21:33:32</sys_updated_on>
+        <sys_updated_on>2023-11-13 09:33:30</sys_updated_on>
         <timeline_page/>
         <title>Log</title>
         <uncancelable>false</uncancelable>
