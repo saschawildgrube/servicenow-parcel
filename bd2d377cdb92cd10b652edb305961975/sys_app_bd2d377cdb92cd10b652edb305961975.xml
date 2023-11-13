@@ -14,13 +14,13 @@
         <license_model>none</license_model>
         <logo/>
         <menu/>
-        <name>Parcel WORK IN PROGRESS</name>
+        <name>Parcel</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_snc_parcel</scope>
         <scoped_administration>false</scoped_administration>
-        <short_description>Tracks parcels</short_description>
+        <short_description>Produce PDF shipping labels. Scan labels to track the position and delivery of parcels.</short_description>
         <source>x_snc_parcel</source>
         <store_correlation_id/>
         <store_url/>
@@ -29,9 +29,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 18:25:50</sys_created_on>
         <sys_id>bd2d377cdb92cd10b652edb305961975</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-19 22:22:00</sys_updated_on>
+        <sys_updated_on>2023-11-13 09:35:37</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
