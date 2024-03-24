@@ -22,6 +22,8 @@
 	var GetBoolValue = x_snc_devtools.GetBoolValue;
 	var StringReplace = x_snc_devtools.StringReplace;
 	var HtmlRenderError = x_snc_devtools.HtmlRenderError;
+	var HtmlRenderScript	= x_snc_devtools.HtmlRenderScript;
+	var RenderValue = x_snc_devtools.RenderValue;
 	
 	function HtmlRenderPageParcelScanStateEnterNumber()
 	{
@@ -57,6 +59,7 @@
 		
 		var strProfileSysId = '';
 		var strTidTextScan = '';
+		var bScanGeoLocation = false;
 
 		var grProfile = GetProfileRecord(grParcel.profile);
 		if (IsValidRecord(grProfile) == false)
@@ -70,8 +73,12 @@
 		
 		strProfileSysId = GetStringValue(grProfile.sys_id);
 		strTidTextScan = GetStringValue(grProfile.tid_text_scan);
+		bScanGeoLocation = GetBoolValue(grProfile.geolocation);
 
 		strHtml = '';
+
+		strHtml += HtmlRenderScript('var bScanGeoLocation = '+RenderValue(bScanGeoLocation) + ';'); 
+
 		strHtml += '<h1>'+grParcel.number+'</h1>';
 
 		if (strTidTextScan != '')
@@ -211,13 +218,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 08:58:22</sys_created_on>
         <sys_id>85848381db160150b652edb3059619c7</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>HtmlRenderPageParcelScan</sys_name>
-        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
-        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_85848381db160150b652edb3059619c7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-19 21:26:59</sys_updated_on>
+        <sys_updated_on>2024-03-24 12:23:53</sys_updated_on>
     </sys_script_include>
 </record_update>

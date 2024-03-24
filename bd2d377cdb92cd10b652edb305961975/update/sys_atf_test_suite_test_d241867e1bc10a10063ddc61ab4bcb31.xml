@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="INSERT_OR_UPDATE">
+        <abort_on_failure>false</abort_on_failure>
+        <order>100</order>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-23 19:58:37</sys_created_on>
+        <sys_id>d241867e1bc10a10063ddc61ab4bcb31</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>1a41c27e1bc10a10063ddc61ab4bcb1d</sys_name>
+        <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_d241867e1bc10a10063ddc61ab4bcb31</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-23 20:03:13</sys_updated_on>
+        <test display_value="Parcel - CreateParcel">1a41c27e1bc10a10063ddc61ab4bcb1d</test>
+        <test_suite display_value="Parcel">108dfb74dbd2cd10b652edb30596190f</test_suite>
+    </sys_atf_test_suite_test>
+</record_update>
