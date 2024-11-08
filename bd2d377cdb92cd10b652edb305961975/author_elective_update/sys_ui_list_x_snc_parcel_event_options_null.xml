@@ -61,7 +61,7 @@
     </sys_ui_list>
 <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="Parcel">bd2d377cdb92cd10b652edb305961975</application>
+        <application display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</application>
         <file_path/>
         <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
         <instance_name>wildwashington</instance_name>
@@ -155,10 +155,10 @@
         <sys_metadata>bfd98049db16cd10b652edb305961903</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_snc_parcel_event_options</sys_name>
-        <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_scope_delete display_value="">5be45ded9026453eb1983a2ba61118e4</sys_scope_delete>
         <sys_update_name>sys_ui_list_x_snc_parcel_event_options_null</sys_update_name>
         <sys_update_version display_value="sys_ui_list_x_snc_parcel_event_options_null">bc6b6ee0c31c5e505a37f90705013141</sys_update_version>
