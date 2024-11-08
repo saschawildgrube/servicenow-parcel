@@ -3,6 +3,8 @@
         <cleared>false</cleared>
         <disabled>false</disabled>
         <field>total_weight</field>
+        <field_message/>
+        <field_message_type/>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -18,6 +20,9 @@
         <sys_updated_on>2022-04-09 16:26:11</sys_updated_on>
         <table>x_snc_parcel_parcel</table>
         <ui_policy display_value="Parcel - Totals are editable if no parts are defined">76bbebbcdbb60110b652edb30596196e</ui_policy>
+        <value/>
+        <value_action/>
         <visible>ignore</visible>
     </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=8eeb23fcdbb60110b652edb3059619f4"/>
 </record_update>

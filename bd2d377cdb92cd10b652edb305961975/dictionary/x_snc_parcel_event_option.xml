@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="69e5b5bd1b463110063ddc61ab4bcbba" label="Event Option" max_length="40" name="x_snc_parcel_event_option" type="collection">
+    <element db_object_id="953b6166c3b48a105a37f907050131ac" label="Event Option" max_length="40" name="x_snc_parcel_event_option" type="collection">
         <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
-        <element display="true" label="Name" max_length="200" name="name" type="string"/>
         <element label="Order" max_length="40" name="order" type="integer"/>
         <element label="Profile" mandatory="true" max_length="32" name="profile" reference="x_snc_parcel_profile" type="reference"/>
+        <element display="true" label="Name" max_length="200" name="name" type="string"/>
         <index name="index">
             <element name="location"/>
         </index>

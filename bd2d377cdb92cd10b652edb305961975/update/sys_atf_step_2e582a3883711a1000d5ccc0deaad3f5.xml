@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-08 20:39:42</sys_created_on>
+        <sys_id>2e582a3883711a1000d5ccc0deaad3f5</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_atf_step_2e582a3883711a1000d5ccc0deaad3f5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-08 21:26:31</sys_updated_on>
+        <table/>
+        <test display_value="Parcel - CalculateParcel">e2582a3883711a1000d5ccc0deaad3dc</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=2e582a3883711a1000d5ccc0deaad3f5"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>2e582a3883711a1000d5ccc0deaad3f5</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-08 20:39:42</sys_created_on>
+        <sys_id>26582a3883711a1000d5ccc0deaad3f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-08 20:39:42</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>2e582a3883711a1000d5ccc0deaad3f5</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-08 20:39:42</sys_created_on>
+        <sys_id>6e582a3883711a1000d5ccc0deaad3f8</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-08 21:26:31</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+	function TestCase_CalculateParcel(vParcel, vExpected)&#13;
+	{&#13;
+		function TestCase_CalculateParcel_CheckResult(vInput,vExpected,vResult)&#13;
+		{&#13;
+			if (vExpected === false)&#13;
+			{&#13;
+				test.Log('vExpected is false');&#13;
+				return (vExpected == vResult);&#13;
+			}&#13;
+			var grParcel = GetParcelRecord(vInput['vParcel']);&#13;
+			test.Log('Reloading Parcel:');&#13;
+			test.Log(grParcel);&#13;
+			var fTotalVolume = x_snc_devtools.GetFloatValue(x_snc_devtools.GetValue(vExpected,'total_volume'));&#13;
+			if (fTotalVolume != x_snc_devtools.GetFloatValue(grParcel.total_volume))&#13;
+			{&#13;
+				return false;&#13;
+			}&#13;
+			var nTotalWeight = x_snc_devtools.GetIntegerValue(x_snc_devtools.GetValue(vExpected,'total_weight'));&#13;
+			if (nTotalWeight != x_snc_devtools.GetIntegerValue(grParcel.total_weight))&#13;
+			{&#13;
+				return false;&#13;
+			}&#13;
+			var nParts = x_snc_devtools.GetIntegerValue(x_snc_devtools.GetValue(vExpected,'parts'));&#13;
+			if (nParts != x_snc_devtools.GetIntegerValue(grParcel.parts))&#13;
+			{&#13;
+				return false;&#13;
+			}			&#13;
+			return true;&#13;
+		}&#13;
+&#13;
+		test.TestCase(&#13;
+			'Function CalculateParcel()',&#13;
+			CalculateParcel,&#13;
+			{&#13;
+				'vParcel': vParcel&#13;
+			},&#13;
+			vExpected,&#13;
+			TestCase_CalculateParcel_CheckResult);&#13;
+	}&#13;
+&#13;
+	TestCase_CalculateParcel(null,false);&#13;
+&#13;
+	var grParcel = new GlideRecord('x_snc_parcel_parcel');&#13;
+	grParcel.initialize();&#13;
+	grParcel.insert();&#13;
+	TestCase_CalculateParcel(grParcel,&#13;
+		{&#13;
+			total_volume: 0,&#13;
+			total_weight: 0&#13;
+		});&#13;
+&#13;
+&#13;
+&#13;
+	var grParcelPart = new GlideRecord('x_snc_parcel_part');&#13;
+	grParcelPart.initialize();&#13;
+	grParcelPart.length = 100;&#13;
+	grParcelPart.height = 100;&#13;
+	grParcelPart.width = 100;&#13;
+	grParcelPart.parcel = grParcel.sys_id;&#13;
+	grParcelPart.weight = 100;&#13;
+	grParcelPart.insert();&#13;
+	TestCase_CalculateParcel(grParcel,&#13;
+		{&#13;
+			total_volume: 1,&#13;
+			total_weight: 100,&#13;
+			parts: 1&#13;
+		});&#13;
+	&#13;
+	var grParcelPart = new GlideRecord('x_snc_parcel_part');&#13;
+	grParcelPart.initialize();&#13;
+	grParcelPart.length = 50;&#13;
+	grParcelPart.height = 50;&#13;
+	grParcelPart.width = 50;&#13;
+	grParcelPart.parcel = grParcel.sys_id;&#13;
+	grParcelPart.weight = 50;&#13;
+	grParcelPart.insert();&#13;
+	TestCase_CalculateParcel(grParcel,&#13;
+		{&#13;
+			total_volume: 1.125,&#13;
+			total_weight: 150,&#13;
+			parts: 2&#13;
+		});&#13;
+&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>
