@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list action="DELETE" parent="" relationship="" sys_domain="global" table="x_snc_parcel_type" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="x_snc_parcel_type" element="NULL" name="x_snc_parcel_type" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">f18ae8b9dbaec910b652edb3059619b1</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-30 15:55:12</sys_created_on>
+            <sys_id>798a2cb9dbaec910b652edb30596193b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-30 15:55:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_snc_parcel_type</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-30 15:55:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f18ae8b9dbaec910b652edb3059619b1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_parcel_type</sys_name>
+            <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+            <sys_update_name>sys_ui_list_x_snc_parcel_type_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-30 15:55:12</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Parcel">bd2d377cdb92cd10b652edb305961975</application>
+        <file_path/>
+        <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
+        <instance_name>wildwashington</instance_name>
+        <name>sys_ui_list_x_snc_parcel_type_null</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_snc_parcel_type" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="x_snc_parcel_type" element="NULL" name="x_snc_parcel_type" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">f18ae8b9dbaec910b652edb3059619b1</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-30 15:55:12</sys_created_on>
+            <sys_id>798a2cb9dbaec910b652edb30596193b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-30 15:55:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_snc_parcel_type</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-30 15:55:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f18ae8b9dbaec910b652edb3059619b1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_parcel_type</sys_name>
+            <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
+            <sys_update_name>sys_ui_list_x_snc_parcel_type_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-30 15:55:12</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>]]></payload>
+        <payload_hash>-986900520</payload_hash>
+        <record_name>x_snc_parcel_type</record_name>
+        <reverted_from/>
+        <source>685ba6e0c31c5e505a37f90705013189</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-08-25 12:40:19</sys_created_on>
+        <sys_id>816b6ee0c31c5e505a37f90705013180</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191898d38390000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-08-25 12:40:19</sys_updated_on>
+        <type>List Layout</type>
+        <update_guid>4d6b6ee0b11c5e503bc13c2b5475a37f</update_guid>
+        <update_guid_history>4d6b6ee0b11c5e503bc13c2b5475a37f:0,2e462183ec094e5024bfb22ce2c80201:0,f24b2d6696b48a10794e6df0459bcba0:0,398a2cb966aec910ddd03c3f9b98723d:-1563254864</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-08 21:38:26</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_list">sys_ui_list</sys_db_object>
+        <sys_id>13d76812612d4a918a48e105655a00a1</sys_id>
+        <sys_metadata>f18ae8b9dbaec910b652edb3059619b1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_parcel_type</sys_name>
+        <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_scope_delete display_value="">5be45ded9026453eb1983a2ba61118e4</sys_scope_delete>
+        <sys_update_name>sys_ui_list_x_snc_parcel_type_null</sys_update_name>
+        <sys_update_version display_value="sys_ui_list_x_snc_parcel_type_null">816b6ee0c31c5e505a37f90705013180</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-08 21:38:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
