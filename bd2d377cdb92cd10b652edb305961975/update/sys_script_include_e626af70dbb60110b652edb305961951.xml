@@ -7,14 +7,14 @@
         <client_callable>false</client_callable>
         <description>Calculates the total weight and volume of the given parcel, or false if the given Sys ID does not refer to an existing parcel record.</description>
         <name>CalculateParcel</name>
-        <script><![CDATA[function CalculateParcel(strSysId)
+        <script><![CDATA[function CalculateParcel(vParcel)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
 	var GetFloatValue = x_snc_devtools.GetFloatValue;
 	var GlideRecordUpdate = x_snc_devtools.GlideRecordUpdate;
 	
-	var grParcel = GetParcelRecord(strSysId);
+	var grParcel = GetParcelRecord(vParcel);
 	if (IsValidRecord(grParcel) == false)
 	{
 		return false;
@@ -52,13 +52,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-09 13:19:09</sys_created_on>
         <sys_id>e626af70dbb60110b652edb305961951</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>CalculateParcel</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_e626af70dbb60110b652edb305961951</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-22 10:32:23</sys_updated_on>
+        <sys_updated_on>2024-11-08 21:11:19</sys_updated_on>
     </sys_script_include>
 </record_update>
