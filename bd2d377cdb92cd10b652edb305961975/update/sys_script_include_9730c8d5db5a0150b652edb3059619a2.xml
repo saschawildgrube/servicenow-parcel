@@ -7,19 +7,20 @@
         <client_callable>false</client_callable>
         <description>Returns a parcel record based on a sys id or a parcel number.</description>
         <name>GetParcelRecord</name>
-        <script><![CDATA[function GetParcelRecord(strParcel)
+        <script><![CDATA[function GetParcelRecord(vParcel)
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var IsValidSysId = x_snc_devtools.IsValidSysId;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetRecord = x_snc_devtools.GetRecord;
 
-	strParcel = GetStringValue(strParcel);
-	
-	if (IsValidSysId(strParcel))
+	var grParcel = GetRecord('x_snc_parcel_parcel',vParcel);
+	if (IsValidRecord(grParcel) == true)
 	{
-		return GetRecord('x_snc_parcel_parcel',strParcel);
+		return true;
 	}
+	
+	var strParcel = GetStringValue(vParcel);
 	
 	strParcel = MakeValidParcelNumber(strParcel);
 	
@@ -36,13 +37,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 13:20:18</sys_created_on>
         <sys_id>9730c8d5db5a0150b652edb3059619a2</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>GetParcelRecord</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_9730c8d5db5a0150b652edb3059619a2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-06 15:35:54</sys_updated_on>
+        <sys_updated_on>2024-11-08 20:56:47</sys_updated_on>
     </sys_script_include>
 </record_update>
