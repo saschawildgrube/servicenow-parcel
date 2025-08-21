@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Renders the UI page that offers the user to select options to generate a parcel event.</description>
+        <mobile_callable>false</mobile_callable>
         <name>HtmlRenderPageParcelScan</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function HtmlRenderPageParcelScan()
 {
 	if (IsActive() == false)
@@ -226,5 +228,6 @@
         <sys_update_name>sys_script_include_85848381db160150b652edb3059619c7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-08 21:38:25</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

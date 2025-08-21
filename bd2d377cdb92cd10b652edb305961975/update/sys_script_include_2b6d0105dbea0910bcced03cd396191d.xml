@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the sys id of the default profile if it exists.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetDefaultProfile</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetDefaultProfile()
 {
 	var grProfile = new GlideRecord('x_snc_parcel_profile');
@@ -30,5 +32,6 @@
         <sys_update_name>sys_script_include_2b6d0105dbea0910bcced03cd396191d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-08 21:38:25</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

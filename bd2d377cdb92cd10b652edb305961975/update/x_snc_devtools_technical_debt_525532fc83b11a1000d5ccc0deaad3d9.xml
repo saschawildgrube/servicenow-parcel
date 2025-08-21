@@ -2,6 +2,7 @@
     <x_snc_devtools_technical_debt action="INSERT_OR_UPDATE">
         <description>Deprecated function name GetParcelScanPageURL. Should be GetParcelScanPageUrl.</description>
         <id/>
+        <related_backlog_item_url/>
         <short_description>GetParcelScanPageURL</short_description>
         <switch>false</switch>
         <sys_class_name>x_snc_devtools_technical_debt</sys_class_name>
@@ -16,5 +17,6 @@
         <sys_update_name>x_snc_devtools_technical_debt_525532fc83b11a1000d5ccc0deaad3d9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-08 21:36:53</sys_updated_on>
+        <type/>
     </x_snc_devtools_technical_debt>
 </record_update>

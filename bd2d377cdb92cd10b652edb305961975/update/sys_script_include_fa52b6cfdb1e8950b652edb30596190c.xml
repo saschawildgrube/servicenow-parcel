@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Creates a pdf document containing all labels associated to a task and stores it as an attachment to the task.</description>
+        <mobile_callable>false</mobile_callable>
         <name>CreateParcelLabelsFromTask</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function CreateParcelLabelsFromTask(strTaskSysId)
 {
 	var IsValidSysId = x_snc_devtools.IsValidSysId;
@@ -80,5 +82,6 @@
         <sys_update_name>sys_script_include_fa52b6cfdb1e8950b652edb30596190c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-08 21:38:26</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
