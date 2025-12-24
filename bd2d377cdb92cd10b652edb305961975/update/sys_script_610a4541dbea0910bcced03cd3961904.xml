@@ -29,11 +29,14 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetRecord = x_snc_devtools.GetRecord;
+
 	if (previous.getValue('default') == false && current.getValue('default') == true)
 	{
-		var grProfiles = GetDefaultProfile();
+		var grProfile = GetRecord('x_snc_parcel_profile',GetDefaultProfile());
 
-		if (x_snc_devtools.IsValidRecord(grProfiles))
+		if (IsValidRecord(grProfile))
 		{
 			if (grProfile.sys_id != current.sys_id)
 			{
@@ -50,7 +53,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>610a4541dbea0910bcced03cd3961904</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Parcel Profile - Control default</sys_name>
         <sys_overrides/>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
@@ -58,7 +61,7 @@
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_610a4541dbea0910bcced03cd3961904</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-24 20:25:55</sys_updated_on>
+        <sys_updated_on>2025-12-24 20:30:41</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
