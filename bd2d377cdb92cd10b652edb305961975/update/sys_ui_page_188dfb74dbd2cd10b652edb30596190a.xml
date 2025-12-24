@@ -93,6 +93,7 @@
 		<li>Added ATF test for GetCategoriesFromParcels().</li>
 		<li>Added ATF test for GetContactsFromParcels().</li>
 		<li>Added ATF test for CreateParcelEvent().</li>
+		<li>Added ACL for manual UI Page.</li>
 	</ol>
 
 
@@ -145,14 +146,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 18:27:21</sys_created_on>
         <sys_id>188dfb74dbd2cd10b652edb30596190a</sys_id>
-        <sys_mod_count>46</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_ui_page_188dfb74dbd2cd10b652edb30596190a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-24 16:24:26</sys_updated_on>
+        <sys_updated_on>2025-12-24 16:27:18</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>188dfb74dbd2cd10b652edb30596190a</id>
