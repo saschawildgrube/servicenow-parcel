@@ -17,7 +17,7 @@
     </sys_security_acl_role>
 <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="Parcel">bd2d377cdb92cd10b652edb305961975</application>
+        <application display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</application>
         <file_path/>
         <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
         <instance_name>wildyokohama</instance_name>
@@ -67,10 +67,10 @@
         <sys_metadata>bc91c2a5f334621048dff31347890431</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_snc_parcel_part.public</sys_name>
-        <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_package display_value="Parcel WORK IN PROGRESS" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_scope display_value="Parcel WORK IN PROGRESS">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_scope_delete display_value="">5be45ded9026453eb1983a2ba61118e4</sys_scope_delete>
         <sys_update_name>sys_security_acl_role_bc91c2a5f334621048dff31347890431</sys_update_name>
         <sys_update_version display_value="sys_security_acl_role_bc91c2a5f334621048dff31347890431">dbde6dbc2b63ea109083fe395e91bf79</sys_update_version>
