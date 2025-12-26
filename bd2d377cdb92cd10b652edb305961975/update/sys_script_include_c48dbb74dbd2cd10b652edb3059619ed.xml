@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>This script installs Parcel.</description>
+        <mobile_callable>false</mobile_callable>
         <name>AppInstall</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function AppInstall()
 {
 	var installer = new x_snc_devtools.InstallerAPI(x_snc_devtools.GetAppName('x_snc_parcel'));
@@ -26,5 +28,6 @@
         <sys_update_name>sys_script_include_c48dbb74dbd2cd10b652edb3059619ed</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2023-04-24 17:50:59</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

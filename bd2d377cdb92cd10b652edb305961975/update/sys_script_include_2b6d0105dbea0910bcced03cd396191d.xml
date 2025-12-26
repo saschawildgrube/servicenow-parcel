@@ -6,12 +6,18 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the sys id of the default profile if it exists.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetDefaultProfile</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetDefaultProfile()
 {
 	var grProfile = new GlideRecord('x_snc_parcel_profile');
 	grProfile.addQuery('default','=',true);
 	grProfile.query();
+	if (grProfile.getRowCount() != 1)
+	{
+		return false;
+	}
 	if (grProfile.next())
 	{
 		return x_snc_devtools.GetStringValue(grProfile.sys_id);
@@ -22,13 +28,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-28 10:34:37</sys_created_on>
         <sys_id>2b6d0105dbea0910bcced03cd396191d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>GetDefaultProfile</sys_name>
         <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
         <sys_policy/>
         <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
         <sys_update_name>sys_script_include_2b6d0105dbea0910bcced03cd396191d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-08 21:38:25</sys_updated_on>
+        <sys_updated_on>2025-12-24 20:24:35</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

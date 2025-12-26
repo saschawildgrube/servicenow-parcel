@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>The DevToolsGetFormatConfig function is called by the DevTools extension point instance class and returns an object with field formatting information.</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevToolsGetFormatConfig</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function DevToolsGetFormatConfig(grRecord)
 {
 	var strTable = grRecord.getRecordClassName();
@@ -67,5 +69,6 @@
         <sys_update_name>sys_script_include_9c8dfb74dbd2cd10b652edb305961904</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-04-10 17:22:18</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

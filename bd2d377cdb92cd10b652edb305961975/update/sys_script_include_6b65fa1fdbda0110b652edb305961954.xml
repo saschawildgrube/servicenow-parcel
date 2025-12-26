@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the number of parcels associated to a given task. </description>
+        <mobile_callable>false</mobile_callable>
         <name>GetParcelCountFromTask</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetParcelCountFromTask(strTaskSysId)
 {
 	var IsValidSysId = x_snc_devtools.IsValidSysId;
@@ -34,5 +36,6 @@
         <sys_update_name>sys_script_include_6b65fa1fdbda0110b652edb305961954</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-08 21:38:25</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

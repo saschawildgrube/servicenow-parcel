@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_parcel.CreateParcelPart</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Creates a parcel part for the given parcel.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>CreateParcelPart</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[function CreateParcelPart(vParcel, nWeight, nHeight, nWidth, nLength)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var IsValidSysId = x_snc_devtools.IsValidSysId;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+
+	var grParcel = GetParcelRecord(vParcel);
+	if (IsValidRecord(grParcel) == false)
+	{
+		return false;
+	}
+
+	var grPart = new GlideRecord('x_snc_parcel_part');
+	grPart.initialize();
+	grPart.parcel = grParcel.sys_id;
+	grPart.weight = GetIntegerValue(nWeight);
+	grPart.height = GetIntegerValue(nHeight);
+	grPart.width = GetIntegerValue(nWidth);
+	grPart.length = GetIntegerValue(nLength);
+	var strPartSysId = grPart.insert();
+
+	if (IsValidSysId(strPartSysId) == false)
+	{
+		return false;
+	}
+	return grPart;
+} ]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-12-24 15:39:31</sys_created_on>
+        <sys_id>6f384e893bcabe5062bf612c95e45a04</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>CreateParcelPart</sys_name>
+        <sys_package display_value="Parcel" source="x_snc_parcel">bd2d377cdb92cd10b652edb305961975</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parcel">bd2d377cdb92cd10b652edb305961975</sys_scope>
+        <sys_update_name>sys_script_include_6f384e893bcabe5062bf612c95e45a04</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-26 22:29:59</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>6f384e893bcabe5062bf612c95e45a04</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-12-24 15:39:30</sys_created_on>
+        <sys_id>98194a0d3bcabe5062bf612c95e45a2c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-24 15:39:30</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

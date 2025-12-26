@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Creates a parcel event based on the given parcel Sys Id indicating the given geolocation of the device by which the parcel was scanned.</description>
+        <mobile_callable>false</mobile_callable>
         <name>CreateParcelEventByPosition</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function CreateParcelEventByPosition(strParcelSysId,fLat,fLong)
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;
@@ -42,5 +44,6 @@
         <sys_update_name>sys_script_include_ffea8c70dbd30550bcced03cd39619ab</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-08 21:38:26</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
